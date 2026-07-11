@@ -580,6 +580,7 @@ a {
 }
 
 .tag-row span,
+.figma-card-tags span,
 .category-meta span,
 .discipline-cloud span {
   display: inline-flex;
@@ -783,8 +784,29 @@ a {
 
 .breadcrumb {
   display: inline-flex;
+  align-items: center;
   margin-bottom: 1rem;
   color: #9cf3f5;
+}
+
+.category-hero .breadcrumb {
+  gap: 8px;
+}
+
+.category-breadcrumb-icon {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.category-breadcrumb-icon .arrow-right-icon {
+  width: 14px;
+  height: 14px;
+  transform: rotate(180deg);
 }
 
 .category-meta {
@@ -1411,19 +1433,6 @@ a {
   gap: 8px;
 }
 
-.figma-card-tags span,
-.tag-row span {
-  min-height: 22px;
-  padding: 1px 8px;
-  color: #343434;
-  font-family: Chenla, Georgia, serif;
-  font-size: 12px;
-  font-weight: 400;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  background: #ffffff;
-}
-
 .card-icon-link {
   display: inline-flex;
   flex: 0 0 auto;
@@ -1633,7 +1642,7 @@ a {
   }
 
   .highlight-row > .project-card--wide {
-    padding-block: 5px;
+    padding-block: 24px;
   }
 
   .highlight-row > .project-card--wide .project-visual--laptop .figma-device-img {

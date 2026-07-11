@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import { ArrowRightIcon } from '../components/ArrowRightIcon';
 import { ProjectCard } from '../components/ProjectCard';
 import { getCategory } from '../data/categories';
 import { getProjectsByCategory } from '../data/projects';
@@ -21,6 +22,9 @@ export function CategoryPage() {
     <div className="page-shell">
       <section className="page-hero category-hero">
         <Link className="breadcrumb" to="/">
+          <span className="category-breadcrumb-icon" aria-hidden="true">
+            <ArrowRightIcon />
+          </span>
           Home
         </Link>
         <p className="eyebrow">{category.eyebrow}</p>
