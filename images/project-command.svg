@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Care operations dashboard mockup</title>
+  <desc id="desc">A command center interface with charts, queues, and operational health indicators.</desc>
+  <rect width="1200" height="800" rx="28" fill="#183847"/>
+  <rect x="90" y="80" width="1020" height="560" rx="28" fill="#101719"/>
+  <rect x="128" y="122" width="180" height="476" rx="18" fill="#1e2d31"/>
+  <rect x="342" y="122" width="710" height="120" rx="18" fill="#223941"/>
+  <rect x="342" y="274" width="330" height="324" rx="18" fill="#1b2a2f"/>
+  <rect x="706" y="274" width="346" height="324" rx="18" fill="#1b2a2f"/>
+  <g fill="#61d9e7">
+    <rect x="158" y="158" width="110" height="16" rx="8"/>
+    <rect x="158" y="210" width="80" height="16" rx="8"/>
+    <rect x="158" y="262" width="124" height="16" rx="8"/>
+    <rect x="380" y="158" width="162" height="24" rx="12"/>
+  </g>
+  <path d="M382 508l58-92 60 42 54-112 72 78" fill="none" stroke="#61d9e7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#e35da8">
+    <circle cx="790" cy="390" r="54"/>
+    <circle cx="914" cy="390" r="54" opacity=".7"/>
+    <circle cx="852" cy="500" r="54" opacity=".45"/>
+  </g>
+</svg>

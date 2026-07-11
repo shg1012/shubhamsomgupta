@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Provider onboarding flow mockup</title>
+  <desc id="desc">A modular onboarding checklist interface with progress cards.</desc>
+  <rect width="1200" height="800" rx="28" fill="#302e55"/>
+  <rect x="160" y="118" width="880" height="520" rx="28" fill="#f7fbfb"/>
+  <rect x="160" y="118" width="880" height="72" rx="28" fill="#dfe8fb"/>
+  <rect x="220" y="242" width="220" height="310" rx="20" fill="#eceff8"/>
+  <rect x="482" y="242" width="220" height="310" rx="20" fill="#eceff8"/>
+  <rect x="744" y="242" width="220" height="310" rx="20" fill="#eceff8"/>
+  <g fill="#7869ff">
+    <rect x="220" y="226" width="130" height="18" rx="9"/>
+    <rect x="482" y="226" width="140" height="18" rx="9"/>
+    <rect x="744" y="226" width="118" height="18" rx="9"/>
+    <circle cx="264" cy="316" r="28"/>
+    <circle cx="526" cy="316" r="28" opacity=".72"/>
+    <circle cx="788" cy="316" r="28" opacity=".45"/>
+  </g>
+  <path d="M292 434h94M554 434h94M816 434h94M292 478h72M554 478h74M816 478h70" stroke="#8da0aa" stroke-width="14" stroke-linecap="round"/>
+</svg>
