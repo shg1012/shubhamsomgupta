@@ -28,7 +28,6 @@ export function ProjectPage() {
           <Link className="breadcrumb" to={`/work/${project.category}`}>
             {category?.title ?? 'Work'}
           </Link>
-          <p className="eyebrow">{category?.eyebrow}</p>
           <h1>{project.title}</h1>
           <p>{project.overview ?? project.shortDescription}</p>
           <div className="tag-row">

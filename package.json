@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "GITHUB_PAGES=true npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.0.0",
