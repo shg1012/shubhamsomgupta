@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowRightIcon } from './ArrowRightIcon';
 
 interface SectionHeaderProps {
   eyebrow?: string;
@@ -25,7 +26,7 @@ export function SectionHeader({
       {actionLabel && actionTo ? (
         <Link className="text-action" to={actionTo}>
           {actionLabel}
-          <span aria-hidden="true">{' ->'}</span>
+          <ArrowRightIcon />
         </Link>
       ) : null}
     </div>

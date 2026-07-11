@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { getCategory } from '../data/categories';
 import type { Project } from '../types/portfolio';
+import { ArrowRightIcon } from './ArrowRightIcon';
 import { ProjectVisual } from './ProjectVisual';
 
 interface ProjectCardProps {
@@ -26,13 +27,13 @@ export function ProjectCard({ project, size }: ProjectCardProps) {
         <h3>{project.title}</h3>
         <p>{project.shortDescription}</p>
         <div className="tag-row" aria-label="Project tags">
-          {project.tags.slice(0, 4).map((tag) => (
+          {project.tags.slice(0, 2).map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
         </div>
         <span className="card-action">
           View case study
-          <span aria-hidden="true">{' ->'}</span>
+          <ArrowRightIcon />
         </span>
       </div>
       <ProjectVisual project={project} />

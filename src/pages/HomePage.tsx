@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowRightIcon } from '../components/ArrowRightIcon';
 import { Hero } from '../components/Hero';
 import { ProjectCard } from '../components/ProjectCard';
 import { SectionHeader } from '../components/SectionHeader';
@@ -10,6 +11,9 @@ import {
   getSecondaryFeaturedProject,
 } from '../data/projects';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import type { ProjectCardSize } from '../types/portfolio';
+
+const workStreamCardPattern: ProjectCardSize[] = ['small', 'medium', 'small', 'wide'];
 
 export function HomePage() {
   useDocumentTitle('Design Portfolio');
@@ -29,7 +33,7 @@ export function HomePage() {
               <span>Red Dot Team Awardee</span>
             </div>
             <Link className="card-icon-link" to="/about" aria-label="Read more about Shubham">
-              {'->'}
+              <ArrowRightIcon />
             </Link>
           </div>
           <h2>about me..</h2>
@@ -41,7 +45,7 @@ export function HomePage() {
             user needs, business goals, and real-world constraints.
           </p>
           <Link className="text-action" to="/about">
-            Read the full profile <span aria-hidden="true">{'->'}</span>
+            Read the full profile <ArrowRightIcon />
           </Link>
         </article>
 
@@ -61,14 +65,18 @@ export function HomePage() {
           <section className="work-stream" key={category.slug}>
             <SectionHeader
               eyebrow={category.eyebrow}
-              title={category.title}
+              title={`${category.title} projects`}
               description={category.shortDescription}
-              actionLabel="View all projects"
+              actionLabel="view more"
               actionTo={`/work/${category.slug}`}
             />
-            <div className="project-grid">
-              {categoryProjects.map((project) => (
-                <ProjectCard key={project.slug} project={project} />
+            <div className={`project-grid project-grid--${category.slug}`}>
+              {categoryProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.slug}
+                  project={project}
+                  size={workStreamCardPattern[index] ?? 'small'}
+                />
               ))}
             </div>
           </section>

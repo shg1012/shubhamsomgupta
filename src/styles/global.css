@@ -22,7 +22,7 @@
   --violet: #9d80ff;
   --magenta: #e35da8;
   --green: #7fd8b2;
-  --radius: 48px;
+  --radius: 32px;
   --shadow: 0 6px 16px rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
   --max-width: 1440px;
@@ -82,6 +82,17 @@ svg {
 
 img {
   height: auto;
+}
+
+.arrow-right-icon {
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 a {
@@ -579,6 +590,9 @@ a {
 }
 
 .card-action {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
   margin-top: auto;
   padding-top: 1rem;
   color: #b9fbff;
@@ -1211,12 +1225,9 @@ a {
   margin: 0 auto 32px;
   overflow: hidden;
   border: 0;
-  border-radius: 50px;
-  background:
-    radial-gradient(circle at 18% 42%, rgba(145, 49, 120, 0.78), transparent 30rem),
-    radial-gradient(circle at 70% 38%, rgba(17, 150, 184, 0.76), transparent 34rem),
-    linear-gradient(120deg, rgba(61, 61, 61, 0.65), rgba(45, 57, 61, 0.88));
-  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero-art {
@@ -1298,6 +1309,18 @@ a {
 .two-column-feature {
   grid-template-columns: minmax(260px, 1fr) minmax(0, 3fr);
   gap: 24px;
+  align-items: stretch;
+}
+
+.two-column-feature > .about-preview,
+.two-column-feature > .project-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.two-column-feature > .project-card--hero {
+  grid-column: auto;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(280px, 1.15fr);
 }
 
 .about-preview,
@@ -1351,10 +1374,15 @@ a {
   border-radius: 999px;
 }
 
+.card-icon-link .arrow-right-icon {
+  width: 14px;
+  height: 14px;
+}
+
 .about-preview h2,
 .project-card h3 {
   font-family: Raleway, Inter, ui-sans-serif, system-ui, sans-serif;
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 800;
   line-height: 1.18;
 }
@@ -1419,6 +1447,75 @@ a {
   min-height: 400px;
 }
 
+.work-stream .project-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: 400px 500px;
+  grid-auto-flow: row;
+  grid-auto-rows: 400px;
+  align-items: stretch;
+}
+
+.work-stream .project-card {
+  grid-column: auto;
+  gap: 32px;
+  min-height: 400px;
+}
+
+.work-stream .project-grid > .project-card:first-child {
+  grid-row: span 2;
+  min-height: 924px;
+}
+
+.work-stream .project-card--small {
+  grid-column: span 1;
+}
+
+.work-stream .project-card--medium {
+  grid-column: span 2;
+  grid-template-columns: minmax(0, 0.86fr) minmax(260px, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.work-stream .project-card--wide {
+  grid-column: span 3;
+  grid-template-columns: minmax(0, 0.68fr) minmax(360px, 1.32fr);
+  grid-template-rows: 1fr;
+  min-height: 500px;
+}
+
+.work-stream .project-card--medium .project-visual,
+.work-stream .project-card--wide .project-visual {
+  height: 100%;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.work-stream .project-card h3 {
+  font-size: 32px;
+  line-height: 1.12;
+}
+
+.work-stream .project-card--small h3 {
+  font-size: 32px;
+  line-height: 1.14;
+}
+
+.work-stream .project-card p {
+  max-width: 430px;
+}
+
+.work-stream .project-card--small .figma-device-img {
+  width: min(100%, 360px);
+}
+
+.work-stream .project-card--medium .figma-device-img {
+  width: min(100%, 460px);
+}
+
+.work-stream .project-card--wide .figma-device-img {
+  width: min(100%, 700px);
+}
+
 .project-card__meta {
   display: none;
 }
@@ -1461,7 +1558,41 @@ a {
 }
 
 .photo-tile {
-  border-radius: 24px;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 1500px) {
+  .work-stream .project-card {
+    gap: 24px;
+    padding: 20px;
+  }
+
+  .work-stream .project-card h3,
+  .work-stream .project-card--small h3 {
+    font-size: 32px;
+    line-height: 1.12;
+  }
+
+  .work-stream .project-card p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .work-stream .tag-row {
+    margin-bottom: 12px;
+  }
+
+  .work-stream .project-card--small .figma-device-img {
+    width: min(100%, 310px);
+  }
+
+  .work-stream .project-card--medium .figma-device-img {
+    width: min(100%, 390px);
+  }
+
+  .work-stream .project-card--wide .figma-device-img {
+    width: min(100%, 620px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1662,7 +1793,45 @@ a {
 
   .project-card h3,
   .about-preview h2 {
-    font-size: 38px;
+    font-size: 32px;
+  }
+
+  .work-stream .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+  }
+
+  .work-stream .project-card,
+  .work-stream .project-grid > .project-card:first-child {
+    grid-row: auto;
+    min-height: 460px;
+  }
+
+  .work-stream .project-card--small,
+  .work-stream .project-card--medium {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(210px, 1fr);
+  }
+
+  .work-stream .project-card--wide {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 0.78fr) minmax(300px, 1.22fr);
+    min-height: 460px;
+  }
+
+  .work-stream .project-card h3 {
+    font-size: 32px;
+  }
+
+  .work-stream .project-card--small h3 {
+    font-size: 32px;
+  }
+
+  .two-column-feature > .project-card--hero {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1732,5 +1901,50 @@ a {
   .project-card h3,
   .about-preview h2 {
     font-size: 32px;
+  }
+
+  .work-stream .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-stream .project-card,
+  .work-stream .project-card--small,
+  .work-stream .project-card--medium,
+  .work-stream .project-card--wide,
+  .work-stream .project-grid > .project-card:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(190px, 1fr);
+    min-height: 420px;
+    border-radius: 32px;
+  }
+
+  .work-stream .project-card h3,
+  .work-stream .project-card--small h3 {
+    font-size: 32px;
+    line-height: 1.12;
+  }
+
+  .work-stream .project-card p {
+    max-width: none;
+  }
+
+  .work-stream .project-card--medium .project-visual,
+  .work-stream .project-card--wide .project-visual {
+    height: auto;
+    min-height: 210px;
+    align-self: end;
+  }
+
+  .work-stream .project-card--small .figma-device-img,
+  .work-stream .project-card--medium .figma-device-img,
+  .work-stream .project-card--wide .figma-device-img {
+    width: min(100%, 420px);
+  }
+
+  .two-column-feature > .about-preview,
+  .two-column-feature > .project-card {
+    height: auto;
   }
 }
