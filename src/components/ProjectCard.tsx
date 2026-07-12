@@ -17,8 +17,11 @@ export function ProjectCard({ project, size }: ProjectCardProps) {
     <Link
       className={`project-card project-card--${cardSize} theme-${project.theme}`}
       to={`/project/${project.slug}`}
-      aria-label={`View case study: ${project.title}`}
+      aria-label={`Open project: ${project.title}`}
     >
+      <span className="card-icon-link project-card__icon" aria-hidden="true">
+        <ArrowRightIcon />
+      </span>
       <div className="project-card__copy">
         <div className="project-card__meta">
           <span>{category?.title ?? project.category}</span>
@@ -31,10 +34,6 @@ export function ProjectCard({ project, size }: ProjectCardProps) {
             <span key={tag}>{tag}</span>
           ))}
         </div>
-        <span className="card-action">
-          View case study
-          <ArrowRightIcon />
-        </span>
       </div>
       <ProjectVisual project={project} />
     </Link>

@@ -671,17 +671,6 @@ a {
   background: rgba(255, 255, 255, 0.055);
 }
 
-.card-action {
-  display: inline-flex;
-  gap: 0.35rem;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 1rem;
-  color: #b9fbff;
-  font-size: 0.82rem;
-  font-weight: 800;
-}
-
 .project-visual {
   display: grid;
   min-height: 190px;
@@ -860,26 +849,23 @@ a {
 
 .breadcrumb {
   display: inline-flex;
+  gap: 8px;
   align-items: center;
   margin-bottom: 1rem;
   color: #9cf3f5;
 }
 
-.category-hero .breadcrumb {
-  gap: 8px;
-}
-
-.category-breadcrumb-icon {
+.breadcrumb-icon {
   display: inline-grid;
   width: 28px;
   height: 28px;
   place-items: center;
-  border: 1px solid var(--line-strong);
+  border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.055);
+  background: transparent;
 }
 
-.category-breadcrumb-icon .arrow-right-icon {
+.breadcrumb-icon .arrow-right-icon {
   width: 14px;
   height: 14px;
   transform: rotate(180deg);
@@ -890,7 +876,23 @@ a {
 }
 
 .project-grid--listing {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 1rem;
+  align-items: stretch;
+}
+
+.project-grid--listing > .project-card,
+.project-grid--listing > .project-card--hero,
+.project-grid--listing > .project-card--wide,
+.project-grid--listing > .project-card--medium,
+.project-grid--listing > .project-card--small {
+  grid-column: span 1;
+}
+
+.project-grid--listing > .project-card--hero,
+.project-grid--listing > .project-card--wide {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(240px, 1fr);
 }
 
 .about-layout {
@@ -1286,7 +1288,7 @@ a {
 .brand-mark {
   padding: 0;
   font-family: Raleway, Inter, ui-sans-serif, system-ui, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
 }
 
@@ -1316,7 +1318,7 @@ a {
   padding: 0;
   color: #5cdbd3;
   font-family: Raleway, Inter, ui-sans-serif, system-ui, sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 600;
   background: transparent;
 }
@@ -1526,6 +1528,13 @@ a {
   height: 14px;
 }
 
+.project-card__icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+}
+
 .about-preview h2,
 .project-card h3 {
   font-family: Raleway, Inter, ui-sans-serif, system-ui, sans-serif;
@@ -1539,10 +1548,6 @@ a {
   color: #ffffff;
   font-size: 16px;
   line-height: 24px;
-}
-
-.about-preview .text-action {
-  margin-top: auto;
 }
 
 .section-header {
@@ -1596,21 +1601,23 @@ a {
 
 .work-stream .project-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: 400px 500px;
+  grid-template-rows: 300px 300px;
   grid-auto-flow: row;
-  grid-auto-rows: 400px;
-  align-items: stretch;
+  grid-auto-rows: 300px;
+  align-items: start;
 }
 
 .work-stream .project-card {
   grid-column: auto;
   gap: 32px;
-  min-height: 400px;
+  height: 300px;
+  min-height: 300px;
 }
 
 .work-stream .project-grid > .project-card:first-child {
-  grid-row: span 2;
-  min-height: 924px;
+  grid-row: auto;
+  height: 400px;
+  min-height: 400px;
 }
 
 .work-stream .project-card--small {
@@ -1624,10 +1631,11 @@ a {
 }
 
 .work-stream .project-card--wide {
-  grid-column: span 3;
+  grid-column: 2 / span 3;
   grid-template-columns: minmax(0, 0.68fr) minmax(360px, 1.32fr);
   grid-template-rows: 1fr;
-  min-height: 500px;
+  height: 300px;
+  min-height: 300px;
 }
 
 .work-stream .project-card--medium .project-visual,
@@ -1676,11 +1684,6 @@ a {
 
 .project-card__copy {
   min-width: 240px;
-}
-
-.project-card .card-action {
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 16px;
 }
 
 .project-card::before {
@@ -1996,6 +1999,7 @@ a {
   .work-stream .project-card,
   .work-stream .project-grid > .project-card:first-child {
     grid-row: auto;
+    height: auto;
     min-height: 460px;
   }
 
@@ -2009,6 +2013,7 @@ a {
   .work-stream .project-card--wide {
     grid-column: 1 / -1;
     grid-template-columns: minmax(0, 0.78fr) minmax(300px, 1.22fr);
+    height: auto;
     min-height: 460px;
   }
 
@@ -2112,6 +2117,7 @@ a {
     grid-row: auto;
     grid-template-columns: 1fr;
     grid-template-rows: auto minmax(190px, 1fr);
+    height: auto;
     min-height: 420px;
     border-radius: 32px;
   }

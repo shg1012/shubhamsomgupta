@@ -22,7 +22,7 @@ export function CategoryPage() {
     <div className="page-shell">
       <section className="page-hero category-hero">
         <Link className="breadcrumb" to="/">
-          <span className="category-breadcrumb-icon" aria-hidden="true">
+          <span className="breadcrumb-icon" aria-hidden="true">
             <ArrowRightIcon />
           </span>
           Home

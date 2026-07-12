@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import { ArrowRightIcon } from '../components/ArrowRightIcon';
 import { ProjectVisual } from '../components/ProjectVisual';
 import { getCategory } from '../data/categories';
 import { getProject, getProjectsByCategory } from '../data/projects';
@@ -26,6 +27,9 @@ export function ProjectPage() {
       <section className={`project-hero theme-${project.theme}`}>
         <div className="project-hero__copy">
           <Link className="breadcrumb" to={`/work/${project.category}`}>
+            <span className="breadcrumb-icon" aria-hidden="true">
+              <ArrowRightIcon />
+            </span>
             {category?.title ?? 'Work'}
           </Link>
           <h1>{project.title}</h1>

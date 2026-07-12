@@ -44,9 +44,6 @@ export function HomePage() {
             My work focuses on simplifying complex systems, especially in healthcare, by balancing
             user needs, business goals, and real-world constraints.
           </p>
-          <Link className="text-action" to="/about">
-            Read the full profile <ArrowRightIcon />
-          </Link>
         </article>
 
         {featuredProject ? <ProjectCard project={featuredProject} size="hero" /> : null}
