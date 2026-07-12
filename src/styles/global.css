@@ -37,33 +37,109 @@ html {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background:
-    radial-gradient(circle at 20% 10%, rgba(130, 50, 114, 0.62), transparent 24rem),
-    radial-gradient(circle at 78% 18%, rgba(22, 142, 166, 0.54), transparent 34rem),
-    radial-gradient(circle at 66% 50%, rgba(207, 51, 148, 0.36), transparent 28rem),
-    radial-gradient(circle at 18% 64%, rgba(40, 139, 169, 0.32), transparent 26rem), #3f3f3f;
-  background-attachment: fixed;
+  overflow-x: hidden;
+  background: #3f3f3f;
 }
 
 body::before {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
   content: "";
   pointer-events: none;
+  opacity: 1;
   background:
+    radial-gradient(circle, rgba(145, 45, 128, 0.72), transparent 21rem),
+    radial-gradient(circle, rgba(22, 142, 166, 0.58), transparent 27rem),
+    radial-gradient(circle, rgba(214, 55, 153, 0.48), transparent 24rem),
+    radial-gradient(circle, rgba(40, 139, 169, 0.38), transparent 22rem),
     linear-gradient(90deg, rgba(49, 189, 219, 0.16), transparent 38%, rgba(224, 69, 158, 0.12)),
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 22%);
-  filter: blur(38px);
+  background-position:
+    calc(12vw - 21rem) calc(14vh - 21rem),
+    calc(82vw - 27rem) calc(18vh - 27rem),
+    calc(68vw - 24rem) calc(56vh - 24rem),
+    calc(18vw - 22rem) calc(72vh - 22rem),
+    center,
+    center;
+  background-repeat: no-repeat;
+  background-size:
+    42rem 42rem,
+    54rem 54rem,
+    48rem 48rem,
+    44rem 44rem,
+    100% 100%,
+    100% 100%;
+  filter: blur(28px);
+  animation: drift-gradient-spots 52s ease-in-out infinite alternate;
+  will-change: background-position;
+}
+
+@keyframes drift-gradient-spots {
+  0% {
+    background-position:
+      calc(12vw - 21rem) calc(14vh - 21rem),
+      calc(82vw - 27rem) calc(18vh - 27rem),
+      calc(68vw - 24rem) calc(56vh - 24rem),
+      calc(18vw - 22rem) calc(72vh - 22rem),
+      center,
+      center;
+  }
+
+  23% {
+    background-position:
+      calc(30vw - 21rem) calc(24vh - 21rem),
+      calc(68vw - 27rem) calc(34vh - 27rem),
+      calc(80vw - 24rem) calc(42vh - 24rem),
+      calc(8vw - 22rem) calc(52vh - 22rem),
+      center,
+      center;
+  }
+
+  51% {
+    background-position:
+      calc(8vw - 21rem) calc(42vh - 21rem),
+      calc(88vw - 27rem) calc(28vh - 27rem),
+      calc(52vw - 24rem) calc(68vh - 24rem),
+      calc(34vw - 22rem) calc(82vh - 22rem),
+      center,
+      center;
+  }
+
+  76% {
+    background-position:
+      calc(28vw - 21rem) calc(12vh - 21rem),
+      calc(62vw - 27rem) calc(8vh - 27rem),
+      calc(78vw - 24rem) calc(70vh - 24rem),
+      calc(10vw - 22rem) calc(78vh - 22rem),
+      center,
+      center;
+  }
+
+  100% {
+    background-position:
+      calc(16vw - 21rem) calc(30vh - 21rem),
+      calc(76vw - 27rem) calc(42vh - 27rem),
+      calc(60vw - 24rem) calc(48vh - 24rem),
+      calc(22vw - 22rem) calc(60vh - 22rem),
+      center,
+      center;
+  }
+}
+
+#root {
+  position: relative;
+  z-index: 1;
 }
 
 body::after {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   content: "";
   pointer-events: none;
   opacity: 0.14;
@@ -1306,7 +1382,7 @@ a {
 }
 
 .hero-copy {
-  --hero-copy-offset-x: 50px;
+  --hero-copy-offset-x: 100px;
   position: absolute;
   top: 49.6%;
   right: 21%;
