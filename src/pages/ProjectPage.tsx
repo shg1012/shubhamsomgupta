@@ -30,7 +30,7 @@ export function ProjectPage() {
             <span className="breadcrumb-icon" aria-hidden="true">
               <ArrowRightIcon />
             </span>
-            {category?.title ?? 'Work'}
+            back
           </Link>
           <h1>{project.title}</h1>
           <p>{project.overview ?? project.shortDescription}</p>

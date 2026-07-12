@@ -25,7 +25,7 @@ export function CategoryPage() {
           <span className="breadcrumb-icon" aria-hidden="true">
             <ArrowRightIcon />
           </span>
-          Home
+          back
         </Link>
         <p className="eyebrow">{category.eyebrow}</p>
         <h1>{category.title}</h1>

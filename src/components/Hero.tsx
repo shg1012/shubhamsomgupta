@@ -2,33 +2,17 @@ import { useEffect, useState } from 'react';
 import { assetPath } from '../data/assets';
 import { profile } from '../data/profile';
 
-const HERO_INTRO_STORAGE_KEY = 'ssg-hero-intro-played';
-
-function shouldPlayHeroIntro() {
-  if (typeof window === 'undefined') {
-    return true;
-  }
-
-  try {
-    return window.localStorage.getItem(HERO_INTRO_STORAGE_KEY) !== 'true';
-  } catch {
-    return true;
-  }
-}
+let hasPlayedHeroIntro = false;
 
 export function Hero() {
-  const [playIntro] = useState(shouldPlayHeroIntro);
+  const [playIntro] = useState(() => !hasPlayedHeroIntro);
 
   useEffect(() => {
     if (!playIntro) {
       return;
     }
 
-    try {
-      window.localStorage.setItem(HERO_INTRO_STORAGE_KEY, 'true');
-    } catch {
-      // Storage can be unavailable in stricter browser modes; the animation remains harmless.
-    }
+    hasPlayedHeroIntro = true;
   }, [playIntro]);
 
   return (
