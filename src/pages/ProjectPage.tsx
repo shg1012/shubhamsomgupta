@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRightIcon } from '../components/ArrowRightIcon';
+import { MarkdownCaseStudy } from '../components/MarkdownCaseStudy';
 import { ProjectVisual } from '../components/ProjectVisual';
 import { getCategory } from '../data/categories';
 import { getProject, getProjectsByCategory } from '../data/projects';
@@ -9,7 +10,7 @@ import { NotFoundPage } from './NotFoundPage';
 export function ProjectPage() {
   const { projectSlug } = useParams();
   const project = getProject(projectSlug ?? '');
-  useDocumentTitle(project?.title ?? 'Page not found');
+  useDocumentTitle(project?.title ?? 'Page not found', project?.seo?.description);
 
   if (!project) {
     return <NotFoundPage />;
@@ -68,27 +69,33 @@ export function ProjectPage() {
             <div className="glass-card metric-card" key={metric.label}>
               <strong>{metric.value}</strong>
               <span>{metric.label}</span>
+              {metric.qualification ? <small>{metric.qualification}</small> : null}
             </div>
           ))}
         </section>
       ) : null}
 
-      <section className="case-study-stack">
-        {project.sections?.map((section) => (
-          <article className="case-study-section" key={section.title}>
-            <h2>{section.title}</h2>
-            {section.body ? <p>{section.body}</p> : null}
-            {section.bullets ? (
-              <ul>
-                {section.bullets.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+      <MarkdownCaseStudy project={project} />
+
+      {project.team?.length || project.responsibilities?.length ? (
+        <section className="project-credits glass-card">
+          <h2>Credits</h2>
+          <dl>
+            {project.team?.length ? (
+              <div>
+                <dt>Team</dt>
+                <dd>{project.team.join(', ')}</dd>
+              </div>
             ) : null}
-            {section.image ? <img src={section.image} alt={section.imageAlt ?? ''} /> : null}
-          </article>
-        ))}
-      </section>
+            {project.responsibilities?.length ? (
+              <div>
+                <dt>Responsibilities</dt>
+                <dd>{project.responsibilities.join(', ')}</dd>
+              </div>
+            ) : null}
+          </dl>
+        </section>
+      ) : null}
 
       <nav className="project-next-nav" aria-label="Project navigation">
         <Link to={`/project/${previousProject.slug}`}>

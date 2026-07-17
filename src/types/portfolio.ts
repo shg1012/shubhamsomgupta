@@ -9,6 +9,8 @@ export type ProjectTheme = 'cyan' | 'blue' | 'violet' | 'magenta' | 'slate';
 
 export type DeviceMockup = 'laptop' | 'phone' | 'dual' | 'dashboard' | 'brand-system';
 
+export type ProjectDepth = 'flagship' | 'compact';
+
 export interface ProjectTag {
   label: string;
 }
@@ -16,6 +18,7 @@ export interface ProjectTag {
 export interface ProjectMetric {
   label: string;
   value: string;
+  qualification?: string;
 }
 
 export interface ProjectSection {
@@ -32,12 +35,14 @@ export interface Project {
   category: ProjectCategorySlug;
   shortDescription: string;
   overview?: string;
+  content: string;
   tags: string[];
   year?: string;
   role?: string;
   client?: string;
   duration?: string;
   status?: string;
+  depth: ProjectDepth;
   thumbnail: string;
   thumbnailAlt: string;
   heroImage?: string;
@@ -48,6 +53,14 @@ export interface Project {
   deviceMockup?: DeviceMockup;
   metrics?: ProjectMetric[];
   sections?: ProjectSection[];
+  team?: string[];
+  responsibilities?: string[];
+  seo?: {
+    description?: string;
+  };
+  draft?: boolean;
+  order?: number;
+  sourcePath?: string;
 }
 
 export interface Category {
