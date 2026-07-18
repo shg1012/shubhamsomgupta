@@ -14,17 +14,24 @@ theme: "cyan"
 client: "Healthcare operations platform"
 role: "Lead UX Designer"
 timeline: "12 weeks"
-team:
-  - "Healthcare operations platform"
-responsibilities:
-  - "Workflow discovery"
-  - "Interaction model"
-  - "Design system components"
 tags:
   - "Product Design"
   - "UX Strategy"
   - "Healthcare"
   - "Design Systems"
+voiceOfCustomer:
+  quote: >-
+    I need one place to see what is changing, what is at risk, and who needs to act next.
+  source: "Synthesised care-team need from workflow discovery"
+star:
+  situation: >-
+    Care teams were coordinating high-volume operations across disconnected queues, systems, and handoffs.
+  task: >-
+    Make priorities, patient context, and workflow risk legible without hiding operational complexity.
+  action: >-
+    Mapped workflows, designed queue and timeline interactions, and built reusable patterns for dense clinical information.
+  result: >-
+    Produced a connected command-surface concept and a reusable component language for future validation.
 hero:
   image: "./images/project-healthcare.svg"
   alt: "Dashboard mockup for a healthcare workflow platform."
@@ -60,6 +67,8 @@ The work explored how care teams could coordinate high-volume clinical operation
 ## Problem or opportunity
 
 Teams were switching between disconnected sources of truth, which made prioritisation and escalation feel reactive rather than deliberate.
+
+![Placeholder for a healthcare-workflow visual.](@placeholder/case-study "Placeholder: replace with a workflow map or prototype visual, or remove this image")
 
 ## Design principles
 

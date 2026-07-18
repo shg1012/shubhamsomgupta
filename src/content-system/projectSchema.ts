@@ -31,6 +31,22 @@ const metricSchema = z
   })
   .strict();
 
+const voiceOfCustomerSchema = z
+  .object({
+    quote: requiredString,
+    source: requiredString,
+  })
+  .strict();
+
+const starSchema = z
+  .object({
+    situation: requiredString,
+    task: requiredString,
+    action: requiredString,
+    result: requiredString,
+  })
+  .strict();
+
 export const projectFrontmatterSchema = z
   .object({
     title: requiredString,
@@ -48,9 +64,9 @@ export const projectFrontmatterSchema = z
     client: requiredString,
     role: requiredString,
     timeline: requiredString,
-    team: z.array(requiredString).optional(),
-    responsibilities: z.array(requiredString).optional(),
     tags: z.array(requiredString).min(1),
+    voiceOfCustomer: voiceOfCustomerSchema,
+    star: starSchema,
     hero: imageSchema,
     thumbnail: imageSchema.optional(),
     metrics: z.array(metricSchema).optional(),

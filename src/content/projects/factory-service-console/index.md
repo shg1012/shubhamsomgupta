@@ -19,6 +19,19 @@ tags:
   - "Field Research"
   - "Tablet UI"
   - "Service Design"
+voiceOfCustomer:
+  quote: >-
+    When equipment is down, the next safe check must be obvious even with gloves, glare, noise, and interruptions.
+  source: "Synthesised technician need from field research"
+star:
+  situation: >-
+    Technicians diagnosed equipment faults in demanding environments with incomplete history and frequent interruption.
+  task: >-
+    Support safe, glanceable diagnosis and field documentation on a tablet.
+  action: >-
+    Interviewed technicians, mapped diagnostic paths, and tested fault timelines, guided checks, and capture tools across three prototype rounds.
+  result: >-
+    Delivered a field-ready prototype direction that prioritised status, next actions, and fragmented documentation.
 hero:
   image: "./images/project-factory.svg"
   alt: "Industrial service tablet interface mockup."
@@ -50,6 +63,8 @@ Technicians needed diagnostic support that could survive glare, interruption, gl
 - Prioritise glanceable system status.
 - Make the next physical action unmistakable.
 - Allow documentation to happen in fragments.
+
+![Placeholder for a factory-service console visual.](@placeholder/case-study "Placeholder: replace with a field workflow or prototype visual, or remove this image")
 
 ## Final solution
 

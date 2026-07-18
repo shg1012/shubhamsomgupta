@@ -19,6 +19,19 @@ tags:
   - "Identity Design"
   - "Healthcare"
   - "Guidelines"
+voiceOfCustomer:
+  quote: >-
+    Give us a system that feels clinically trustworthy without becoming cold in patient-facing moments.
+  source: "Synthesised stakeholder need from the identity brief"
+star:
+  situation: >-
+    Product, marketing, and clinical communications needed one identity across patient, provider, and operations touchpoints.
+  task: >-
+    Balance trust, digital clarity, and warmth while preserving flexibility across contexts.
+  action: >-
+    Defined colour roles, typography, illustration rules, layout patterns, tokens, and reusable starter templates.
+  result: >-
+    Delivered guidelines and assets that gave teams a shared visual grammar for six launch channels.
 hero:
   image: "./images/project-identity.svg"
   alt: "Brand identity system boards and interface mockups."
@@ -44,6 +57,8 @@ deviceMockup: "brand-system"
 ## Summary
 
 The system gave product, marketing, and clinical communications a shared visual grammar while preserving room for context-specific tone.
+
+![Placeholder for an Adaptive Care identity-system visual.](@placeholder/case-study "Placeholder: replace with an identity-system visual or remove this image")
 
 ## Design-system contribution
 

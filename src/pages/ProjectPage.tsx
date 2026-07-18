@@ -64,9 +64,9 @@ export function ProjectPage() {
       </section>
 
       {project.metrics ? (
-        <section className="metric-row">
+        <section className="metric-panel glass-card" aria-label="Project metrics">
           {project.metrics.map((metric) => (
-            <div className="glass-card metric-card" key={metric.label}>
+            <div className="metric-card" key={metric.label}>
               <strong>{metric.value}</strong>
               <span>{metric.label}</span>
               {metric.qualification ? <small>{metric.qualification}</small> : null}
@@ -76,26 +76,6 @@ export function ProjectPage() {
       ) : null}
 
       <MarkdownCaseStudy project={project} />
-
-      {project.team?.length || project.responsibilities?.length ? (
-        <section className="project-credits glass-card">
-          <h2>Credits</h2>
-          <dl>
-            {project.team?.length ? (
-              <div>
-                <dt>Team</dt>
-                <dd>{project.team.join(', ')}</dd>
-              </div>
-            ) : null}
-            {project.responsibilities?.length ? (
-              <div>
-                <dt>Responsibilities</dt>
-                <dd>{project.responsibilities.join(', ')}</dd>
-              </div>
-            ) : null}
-          </dl>
-        </section>
-      ) : null}
 
       <nav className="project-next-nav" aria-label="Project navigation">
         <Link to={`/project/${previousProject.slug}`}>

@@ -17,6 +17,19 @@ tags:
   - "Art Direction"
   - "Portfolio Systems"
   - "Web"
+voiceOfCustomer:
+  quote: >-
+    Let the work lead while product design and photography still feel like parts of one practice.
+  source: "Synthesised audience need from the portfolio brief"
+star:
+  situation: >-
+    A multidisciplinary practice needed to present rigorous product work and expressive photography together.
+  task: >-
+    Build an identity that creates coherence without overpowering the project imagery.
+  action: >-
+    Combined disciplined interface grids, compact navigation, atmospheric depth, and loose photographic gestures.
+  result: >-
+    Established an evolving editorial system that supports both portfolio disciplines within one visual voice.
 hero:
   image: "./images/project-studio.svg"
   alt: "Editorial portfolio identity mockup."
@@ -34,6 +47,8 @@ deviceMockup: "brand-system"
 - Let project imagery carry the voice.
 - Use atmospheric depth without reducing readability.
 - Keep navigation compact and always close at hand.
+
+![Placeholder for a studio-portfolio identity visual.](@placeholder/case-study "Placeholder: replace with an identity application or remove this image")
 
 ## Process
 

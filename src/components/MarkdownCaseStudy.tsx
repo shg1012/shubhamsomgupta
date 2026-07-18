@@ -1,5 +1,5 @@
 import { Children, isValidElement, type ReactNode } from 'react';
-import ReactMarkdown, { type Components } from 'react-markdown';
+import ReactMarkdown, { defaultUrlTransform, type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import type { Project } from '../types/portfolio';
 
@@ -41,6 +41,14 @@ function extractHeadings(content: string) {
   });
 }
 
+function markdownUrlTransform(url: string, key: string) {
+  if (key === 'src' && (url.startsWith('data:image/') || url.startsWith('blob:'))) {
+    return url;
+  }
+
+  return defaultUrlTransform(url);
+}
+
 function MarkdownImage({
   src,
   alt,
@@ -56,7 +64,7 @@ function MarkdownImage({
 
   return (
     <figure className="case-study-figure">
-      <img src={src} alt={alt ?? ''} loading="lazy" />
+      <img src={src} alt={alt ?? ''} loading="lazy" decoding="async" />
       {title ? <figcaption>{title}</figcaption> : null}
     </figure>
   );
@@ -128,6 +136,12 @@ const markdownComponents: Components = {
 
 export function MarkdownCaseStudy({ project }: MarkdownCaseStudyProps) {
   const headings = project.depth === 'flagship' ? extractHeadings(project.content) : [];
+  const starCards = [
+    { letter: 'S', title: 'Situation', body: project.star.situation },
+    { letter: 'T', title: 'Task', body: project.star.task },
+    { letter: 'A', title: 'Action', body: project.star.action },
+    { letter: 'R', title: 'Result', body: project.star.result },
+  ];
 
   return (
     <section className={`case-study-stack markdown-case-study markdown-case-study--${project.depth}`}>
@@ -141,8 +155,31 @@ export function MarkdownCaseStudy({ project }: MarkdownCaseStudyProps) {
           ))}
         </nav>
       ) : null}
+      <div className="case-study-opening">
+        <aside className="customer-voice glass-card" aria-label="Voice of customer">
+          <blockquote>
+            <p>{project.voiceOfCustomer.quote}</p>
+            <footer>{project.voiceOfCustomer.source}</footer>
+          </blockquote>
+        </aside>
+        <section className="star-summary" aria-label="STAR project summary">
+          {starCards.map((card) => (
+            <article className="star-card glass-card" key={card.title}>
+              <div className="star-card__title">
+                <span aria-hidden="true">{card.letter}</span>
+                <h2>{card.title}</h2>
+              </div>
+              <p>{card.body}</p>
+            </article>
+          ))}
+        </section>
+      </div>
       <article className="case-study-section markdown-body">
-        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={markdownComponents}
+          urlTransform={markdownUrlTransform}
+        >
           {project.content}
         </ReactMarkdown>
       </article>

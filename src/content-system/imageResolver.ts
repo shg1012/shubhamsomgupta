@@ -1,4 +1,7 @@
 import { assetPath } from '../data/assets';
+import caseStudyPlaceholder from '../content/shared/case-study-placeholder.svg';
+
+export const CASE_STUDY_PLACEHOLDER_PATH = '@placeholder/case-study';
 
 const projectImageModules = import.meta.glob('../content/projects/*/images/**/*', {
   eager: true,
@@ -17,6 +20,10 @@ function normalizeRelativeAssetPath(value: string) {
 }
 
 export function resolveProjectAsset(projectFolder: string, value: string, sourcePath: string) {
+  if (value === CASE_STUDY_PLACEHOLDER_PATH) {
+    return caseStudyPlaceholder;
+  }
+
   if (isExternalUrl(value) || value.startsWith('data:')) {
     return value;
   }

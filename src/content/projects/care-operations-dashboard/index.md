@@ -19,6 +19,19 @@ tags:
   - "Analytics"
   - "Operations"
   - "Healthcare"
+voiceOfCustomer:
+  quote: >-
+    Show me where capacity is under pressure before today's queue becomes tomorrow's backlog.
+  source: "Synthesised operational-leader need from task audits"
+star:
+  situation: >-
+    Operational leaders monitored capacity, task risk, and service health across several disconnected views.
+  task: >-
+    Surface queue pressure and intervention points early enough to support deliberate action.
+  action: >-
+    Audited tasks, defined an alert taxonomy, and reviewed lightweight command-center prototypes with stakeholders.
+  result: >-
+    Consolidated the main scanning path into two views and introduced clear risk tiers for blocked and overdue work.
 hero:
   image: "./images/project-command.svg"
   alt: "Analytics dashboard interface mockup."
@@ -34,6 +47,8 @@ deviceMockup: "dashboard"
 ## Opportunity
 
 Operational leaders needed a faster way to see queue pressure, staff load, and intervention points before backlogs escalated.
+
+![Placeholder for a care-operations dashboard visual.](@placeholder/case-study "Placeholder: replace with a dashboard or workflow visual, or remove this image")
 
 ## Process
 

@@ -21,6 +21,18 @@ export interface ProjectMetric {
   qualification?: string;
 }
 
+export interface ProjectCustomerVoice {
+  quote: string;
+  source: string;
+}
+
+export interface ProjectStarSummary {
+  situation: string;
+  task: string;
+  action: string;
+  result: string;
+}
+
 export interface ProjectSection {
   title: string;
   body?: string;
@@ -37,6 +49,8 @@ export interface Project {
   overview?: string;
   content: string;
   tags: string[];
+  voiceOfCustomer: ProjectCustomerVoice;
+  star: ProjectStarSummary;
   year?: string;
   role?: string;
   client?: string;
@@ -53,8 +67,6 @@ export interface Project {
   deviceMockup?: DeviceMockup;
   metrics?: ProjectMetric[];
   sections?: ProjectSection[];
-  team?: string[];
-  responsibilities?: string[];
   seo?: {
     description?: string;
   };

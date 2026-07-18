@@ -1,0 +1,30 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract OneX platform map</title>
+  <desc id="desc">A conceptual diagram showing a shared healthcare operations platform connecting people, workflows, shared services, and intelligence.</desc>
+  <rect width="1600" height="1000" rx="48" fill="#071B2F"/>
+  <circle cx="800" cy="500" r="258" fill="#0C3650" stroke="#49D3DC" stroke-width="3"/>
+  <circle cx="800" cy="500" r="188" fill="#0E4D6A" stroke="#93EFF0" stroke-width="2" stroke-dasharray="10 14"/>
+  <path d="M379 275L605 399M1221 275L995 399M379 725L605 601M1221 725L995 601" stroke="#49D3DC" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#102B43" stroke="#49D3DC" stroke-width="3">
+    <rect x="146" y="182" width="286" height="186" rx="24"/>
+    <rect x="1168" y="182" width="286" height="186" rx="24"/>
+    <rect x="146" y="632" width="286" height="186" rx="24"/>
+    <rect x="1168" y="632" width="286" height="186" rx="24"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#E8FCFD">
+    <text x="289" y="250" text-anchor="middle" font-size="23" font-weight="700">People</text>
+    <text x="289" y="290" text-anchor="middle" font-size="18" fill="#B7D6E4">Roles, teams &amp; access</text>
+    <text x="1311" y="250" text-anchor="middle" font-size="23" font-weight="700">Workflows</text>
+    <text x="1311" y="290" text-anchor="middle" font-size="18" fill="#B7D6E4">Service, support &amp; care</text>
+    <text x="289" y="700" text-anchor="middle" font-size="23" font-weight="700">Shared services</text>
+    <text x="289" y="740" text-anchor="middle" font-size="18" fill="#B7D6E4">Search, calendar &amp; alerts</text>
+    <text x="1311" y="700" text-anchor="middle" font-size="23" font-weight="700">Intelligence</text>
+    <text x="1311" y="740" text-anchor="middle" font-size="18" fill="#B7D6E4">Context, AI &amp; oversight</text>
+    <text x="800" y="485" text-anchor="middle" font-size="52" font-weight="700">OneX</text>
+    <text x="800" y="531" text-anchor="middle" font-size="22" fill="#B7D6E4">Unified healthcare operations platform</text>
+    <text x="800" y="570" text-anchor="middle" font-size="17" fill="#93EFF0">Conceptual platform map · not product UI</text>
+  </g>
+  <g fill="#49D3DC">
+    <circle cx="605" cy="399" r="9"/><circle cx="995" cy="399" r="9"/><circle cx="605" cy="601" r="9"/><circle cx="995" cy="601" r="9"/>
+  </g>
+</svg>

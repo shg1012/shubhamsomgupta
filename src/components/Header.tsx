@@ -1,10 +1,14 @@
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { navigationItems } from '../data/navigation';
+import { getProject } from '../data/projects';
 import { HomeIcon } from './HomeIcon';
 
 export function Header() {
   const { pathname } = useLocation();
   const isHomePage = pathname === '/';
+  const projectSlug = pathname.match(/^\/project\/([^/]+)/)?.[1];
+  const activeProject = projectSlug ? getProject(decodeURIComponent(projectSlug)) : undefined;
+  const activeCategoryPath = activeProject ? `/work/${activeProject.category}` : undefined;
 
   return (
     <header className={`site-header${isHomePage ? '' : ' site-header--compact-home'}`}>
@@ -24,7 +28,9 @@ export function Header() {
             <NavLink
               key={item.to}
               to={item.to}
-              className={({ isActive }) => `nav-pill${isActive ? ' is-active' : ''}`}
+              className={({ isActive }) =>
+                `nav-pill${isActive || item.to === activeCategoryPath ? ' is-active' : ''}`
+              }
             >
               {item.label}
             </NavLink>

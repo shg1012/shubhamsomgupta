@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { AboutPage } from './pages/AboutPage';
 import { CategoryPage } from './pages/CategoryPage';
 import { ContactPage } from './pages/ContactPage';
@@ -37,6 +38,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </>
   );
 }

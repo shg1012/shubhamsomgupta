@@ -14,13 +14,17 @@ theme: "cyan" # cyan, blue, violet, magenta, slate
 client: "Client or organisation"
 role: "Your role"
 timeline: "Project timeline"
-team:
-  - "Optional collaborator or team name"
-responsibilities:
-  - "Optional responsibility"
 tags:
   - "UX Strategy"
   - "Research"
+voiceOfCustomer:
+  quote: "A verified, anonymised, or clearly labelled synthesised customer statement."
+  source: "Source or context, for example: Synthesised customer need from discovery research"
+star:
+  situation: "The relevant customer, workflow, and product context before the work began."
+  task: "The specific responsibility, decision, or design objective you owned."
+  action: "The research, design, collaboration, and validation work you performed."
+  result: "The evidenced outcome or clearly qualified project output."
 hero:
   image: "./images/hero.webp"
   alt: "Accessible description of the hero image."
@@ -39,6 +43,9 @@ cardSize: "medium" # small, medium, wide, hero
 deviceMockup: "laptop" # laptop, phone, dual, dashboard, brand-system
 ---
 
+<!-- Keep the customer statement evidence-based. Do not present invented wording as a direct quote. -->
+<!-- Optional section images can be inserted anywhere between sections. Use @placeholder/case-study while drafting, replace it with ./images/your-file.webp when ready, or remove the whole image line. The quoted title becomes the visible caption. -->
+
 ## Overview
 
 Write the direct context for the digital product or platform. Remove sections that do not apply.
@@ -49,7 +56,11 @@ Explain the workflow, decision, or user problem without inventing stakes or outc
 
 ## My role
 
-Describe your role and responsibilities. If others contributed, name the collaboration honestly.
+Describe your role, responsibilities, and collaboration honestly.
+
+- Responsibility one.
+- Responsibility two.
+- Responsibility three.
 
 ## Users and context
 
@@ -63,6 +74,8 @@ List important constraints such as privacy, clinical risk, data quality, platfor
 
 Summarize research, audits, workflow mapping, or stakeholder inputs.
 
+![Describe the research visual](@placeholder/case-study "Optional research visual")
+
 ## Key findings
 
 - Finding one.
@@ -73,7 +86,7 @@ Summarize research, audits, workflow mapping, or stakeholder inputs.
 
 Describe the system shape, navigation model, or task flow.
 
-![Accessible alt text](./images/workflow.webp "Current-state workflow")
+![Describe the workflow or architecture visual](@placeholder/case-study "Optional workflow or information-architecture visual")
 
 ## Design principles
 
@@ -88,6 +101,8 @@ Describe prototype rounds, critique, usability testing, or review loops. Do not 
 ## Final experience
 
 Explain the final design, the core screens, and the interaction model.
+
+![Describe the final experience visual](@placeholder/case-study "Optional final-experience visual")
 
 ## Accessibility
 
@@ -109,4 +124,4 @@ Name what the project changed in your design approach.
 
 ## Credits
 
-List collaborators, clients, or source material when appropriate.
+List collaborators, clients, source material, or project ownership when appropriate.

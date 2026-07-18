@@ -19,6 +19,19 @@ tags:
   - "Service Design"
   - "Clinical Trials"
   - "Accessibility"
+voiceOfCustomer:
+  quote: >-
+    Help me understand why a trial may fit before asking me to interpret medical criteria and logistics.
+  source: "Synthesised patient need from research"
+star:
+  situation: >-
+    Patients and caregivers faced complex eligibility language, location constraints, and uncertain next steps.
+  task: >-
+    Create a calmer way to explore and compare potentially relevant clinical trials.
+  action: >-
+    Used interviews and journey mapping to shape guided matching, plain-language eligibility, and saved comparisons.
+  result: >-
+    Delivered a prototype that made relevance and eligibility easier to understand before technical detail.
 hero:
   image: "./images/project-trials.svg"
   alt: "Laptop mockup showing a clinical trial discovery interface."
@@ -48,6 +61,8 @@ Eligibility criteria, location constraints, and medical language can make trial 
 ## Research
 
 Interviews and journey mapping highlighted that patients wanted plain-language confidence before they were ready to compare technical protocol details.
+
+![Placeholder for a clinical-trial discovery research visual.](@placeholder/case-study "Placeholder: replace with a research, journey, or prototype visual, or remove this image")
 
 ## Key insights
 

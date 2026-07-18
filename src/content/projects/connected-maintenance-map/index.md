@@ -17,6 +17,19 @@ tags:
   - "Asset Mapping"
   - "Systems Design"
   - "Prototype"
+voiceOfCustomer:
+  quote: >-
+    Let me see where faults keep returning and which assets need attention first.
+  source: "Synthesised maintenance-planner need from stakeholder sessions"
+star:
+  situation: >-
+    Location, fault recurrence, severity, and maintenance priority were reported separately.
+  task: >-
+    Help planners understand asset condition and recurring issues as one spatial system.
+  action: >-
+    Explored map-first, list-first, and split-pane concepts with layered asset and fault information.
+  result: >-
+    Established a spatial planning direction for comparing facilities, assets, and maintenance priority.
 hero:
   image: "./images/project-maintenance.svg"
   alt: "Maintenance mapping interface mockup."
@@ -32,6 +45,8 @@ deviceMockup: "dashboard"
 ## Research
 
 Stakeholder sessions showed that location, recurrence, and severity needed to be understood together rather than as separate reports.
+
+![Placeholder for a connected-maintenance research visual.](@placeholder/case-study "Placeholder: replace with a site map or research visual, or remove this image")
 
 ## Concepts and iterations
 

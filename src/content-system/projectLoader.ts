@@ -1,5 +1,5 @@
-import matter from 'gray-matter';
 import type { Project, ProjectCategorySlug } from '../types/portfolio';
+import { parseMarkdownFrontmatter } from './frontmatterParser';
 import { resolveMarkdownImagePaths, resolveProjectAsset } from './imageResolver';
 import { parseProjectFrontmatter } from './projectSchema';
 
@@ -21,7 +21,7 @@ function getProjectFolder(sourcePath: string) {
 
 function toProject(sourcePath: string, rawSource: string): Project {
   const folderSlug = getProjectFolder(sourcePath);
-  const parsedMarkdown = matter(rawSource);
+  const parsedMarkdown = parseMarkdownFrontmatter(rawSource, sourcePath);
   const frontmatter = parseProjectFrontmatter(parsedMarkdown.data, sourcePath);
 
   if (frontmatter.slug !== folderSlug) {
@@ -43,6 +43,8 @@ function toProject(sourcePath: string, rawSource: string): Project {
     overview: frontmatter.overview,
     content,
     tags: frontmatter.tags,
+    voiceOfCustomer: frontmatter.voiceOfCustomer,
+    star: frontmatter.star,
     year: frontmatter.year,
     role: frontmatter.role,
     client: frontmatter.client,
@@ -57,8 +59,6 @@ function toProject(sourcePath: string, rawSource: string): Project {
     theme: frontmatter.theme,
     deviceMockup: frontmatter.deviceMockup,
     metrics: frontmatter.metrics,
-    team: frontmatter.team,
-    responsibilities: frontmatter.responsibilities,
     seo: frontmatter.seo,
     draft: frontmatter.draft,
     order: frontmatter.order,

@@ -8,6 +8,7 @@ import { z } from 'zod';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
 const projectsRoot = path.join(repoRoot, 'src/content/projects');
+const caseStudyPlaceholderPath = '@placeholder/case-study';
 
 const requiredString = z.string().trim().min(1);
 
@@ -15,6 +16,22 @@ const imageSchema = z
   .object({
     image: requiredString,
     alt: requiredString,
+  })
+  .strict();
+
+const voiceOfCustomerSchema = z
+  .object({
+    quote: requiredString,
+    source: requiredString,
+  })
+  .strict();
+
+const starSchema = z
+  .object({
+    situation: requiredString,
+    task: requiredString,
+    action: requiredString,
+    result: requiredString,
   })
   .strict();
 
@@ -35,9 +52,9 @@ const projectSchema = z
     client: requiredString,
     role: requiredString,
     timeline: requiredString,
-    team: z.array(requiredString).optional(),
-    responsibilities: z.array(requiredString).optional(),
     tags: z.array(requiredString).min(1),
+    voiceOfCustomer: voiceOfCustomerSchema,
+    star: starSchema,
     hero: imageSchema,
     thumbnail: imageSchema.optional(),
     metrics: z
@@ -89,6 +106,10 @@ function isExternalUrl(value) {
 }
 
 function validateProjectAsset(projectFolder, value, filePath) {
+  if (value === caseStudyPlaceholderPath) {
+    return;
+  }
+
   if (isExternalUrl(value) || value.startsWith('data:') || value.startsWith('/')) {
     return;
   }
