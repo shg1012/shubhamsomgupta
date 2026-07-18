@@ -384,6 +384,164 @@ body:has(.hero-section--intro) .nav-shell {
   background: rgba(84, 216, 232, 0.08);
 }
 
+.mobile-menu-trigger,
+.mobile-menu-backdrop,
+.mobile-menu-panel {
+  display: none;
+}
+
+.mobile-menu-trigger,
+.mobile-menu-close {
+  color: #e6f4ff;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mobile-menu-trigger {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  place-items: center;
+  align-content: center;
+  grid-template-rows: repeat(3, max-content);
+  row-gap: 2px;
+  border-radius: 50%;
+}
+
+.mobile-menu-trigger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  margin: 0;
+  background: currentColor;
+}
+
+.mobile-menu-trigger:hover,
+.mobile-menu-trigger:focus-visible,
+.mobile-menu-close:hover,
+.mobile-menu-close:focus-visible {
+  color: #ffffff;
+  border-color: rgb(156, 243, 245);
+  background: rgba(84, 216, 232, 0.12);
+}
+
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(7, 10, 12, 0.5);
+  backdrop-filter: blur(6px);
+  transition:
+    opacity 240ms ease,
+    visibility 240ms ease;
+}
+
+.mobile-menu-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-panel {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 71;
+  width: min(390px, calc(100vw - 32px));
+  padding: 24px;
+  flex-direction: column;
+  gap: 28px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-left: 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  opacity: 0;
+  visibility: hidden;
+  background:
+    linear-gradient(145deg, rgba(84, 216, 232, 0.1), transparent 42%),
+    linear-gradient(325deg, rgba(227, 93, 168, 0.14), transparent 46%),
+    rgba(35, 39, 42, 0.82);
+  box-shadow: 24px 0 70px rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(24px);
+  transform: translateX(-104%);
+  transition:
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease,
+    visibility 280ms ease;
+}
+
+.mobile-menu-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.mobile-menu-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.mobile-menu-close {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.mobile-menu-close span {
+  position: absolute;
+  top: 19px;
+  left: 11px;
+  width: 18px;
+  height: 1.5px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+
+.mobile-menu-close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.mobile-menu-links {
+  display: grid;
+  gap: 4px;
+}
+
+.mobile-menu-link {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  padding: 0 14px;
+  color: rgba(236, 245, 246, 0.82);
+  font-size: 17px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus-visible {
+  color: #ffffff;
+  border-color: rgba(84, 216, 232, 0.38);
+  background: rgba(84, 216, 232, 0.1);
+}
+
+.mobile-menu-link.is-active {
+  color: #ffffff;
+  border-color: rgb(156, 243, 245);
+  background: rgba(84, 216, 232, 0.12);
+}
+
 .page-shell {
   width: min(var(--max-width), calc(100vw - 2rem));
   margin: 0 auto;
@@ -2122,6 +2280,37 @@ body:has(.hero-section--intro) .nav-shell {
 
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .nav-shell,
+  .site-header--compact-home .nav-shell {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    padding: 10px 16px;
+  }
+
+  .brand-mark,
+  .site-header--compact-home .brand-mark,
+  .nav-pills {
+    display: none;
+  }
+
+  .mobile-menu-trigger {
+    display: grid;
+  }
+
+  .email-pill {
+    justify-self: end;
+  }
+
+  .mobile-menu-backdrop {
+    display: block;
+  }
+
+  .mobile-menu-panel {
+    display: flex;
   }
 }
 
