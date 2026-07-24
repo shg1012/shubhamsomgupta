@@ -34,6 +34,7 @@ export function Header() {
     }
 
     const previousOverflow = document.body.style.overflow;
+    document.body.classList.add('mobile-menu-open');
     document.body.style.overflow = 'hidden';
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -69,6 +70,7 @@ export function Header() {
     document.addEventListener('keydown', handleKeyDown);
 
     return () => {
+      document.body.classList.remove('mobile-menu-open');
       document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', handleKeyDown);
     };

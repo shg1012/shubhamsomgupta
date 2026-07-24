@@ -205,6 +205,12 @@ img {
   transform: translateY(-3px);
 }
 
+body.mobile-menu-open .scroll-top-button {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
 .home-icon {
   flex: 0 0 auto;
   width: 16px;
@@ -1076,6 +1082,7 @@ body:has(.hero-section--intro) .nav-shell {
 .category-hero {
   width: calc(100% - min(50px, 8vw));
   margin-inline: auto;
+  padding: 3rem;
   border: 0;
   border-left: 1px solid var(--line-strong);
   border-radius: 0;

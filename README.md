@@ -27,7 +27,7 @@ and add an `images` folder next to it.
 The folder name and frontmatter `slug` must match, for example:
 
 ```text
-src/content/projects/factory-service-console/
+src/content/projects/fireflys/
 ├── index.md
 └── images/
     └── hero.webp
