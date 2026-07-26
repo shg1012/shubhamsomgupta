@@ -26,7 +26,7 @@ Confirmed in the project brief and Grill Me review on 26 July 2026:
 
 `Shubham_Gupta_Philips_LifeShield_Capstone Project Cloud.pdf`
 
-- Location supplied by the user: `/Users/shubham/Library/CloudStorage/OneDrive-Personal/Projects/Behance Portfolio/Philips Life Shield/`
+- Location: local project source folder supplied by the portfolio owner; source files are not committed
 - 52 pages
 - 1920 x 1080 point pages
 - Adobe XD export
