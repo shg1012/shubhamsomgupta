@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Operator survey baseline for the LT-20 Classic</title>
+  <desc id="desc">Among 14 respondents, shoulder strain was selected by 10, back and upper torso strain by 6 each, neck and palm or finger strain by 4 each, and none by 2. Average ratings were 4.50 out of 5 for functionality, 3.57 for ease of use, and 2.43 for appearance.</desc>
+  <rect width="1600" height="900" rx="32" fill="#151a1d"/>
+  <text x="80" y="92" fill="#f4f9fa" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">Research baseline</text>
+  <text x="80" y="134" fill="#9faeb4" font-family="Inter, Arial, sans-serif" font-size="23">Exploratory operator survey · April 2017 · n=14</text>
+
+  <text x="80" y="212" fill="#f4f9fa" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Reported physical strain</text>
+  <text x="80" y="246" fill="#9faeb4" font-family="Inter, Arial, sans-serif" font-size="19">Respondents could select more than one area</text>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="22">
+    <text x="80" y="318" fill="#f4f9fa">Shoulder</text>
+    <rect x="290" y="290" width="520" height="36" rx="18" fill="#293137"/>
+    <rect x="290" y="290" width="371" height="36" rx="18" fill="#5cdbd3"/>
+    <text x="678" y="317" fill="#f4f9fa" font-weight="700">10 / 14</text>
+
+    <text x="80" y="390" fill="#f4f9fa">Back</text>
+    <rect x="290" y="362" width="520" height="36" rx="18" fill="#293137"/>
+    <rect x="290" y="362" width="223" height="36" rx="18" fill="#5cdbd3"/>
+    <text x="530" y="389" fill="#f4f9fa" font-weight="700">6 / 14</text>
+
+    <text x="80" y="462" fill="#f4f9fa">Upper torso</text>
+    <rect x="290" y="434" width="520" height="36" rx="18" fill="#293137"/>
+    <rect x="290" y="434" width="223" height="36" rx="18" fill="#5cdbd3"/>
+    <text x="530" y="461" fill="#f4f9fa" font-weight="700">6 / 14</text>
+
+    <text x="80" y="534" fill="#f4f9fa">Neck</text>
+    <rect x="290" y="506" width="520" height="36" rx="18" fill="#293137"/>
+    <rect x="290" y="506" width="149" height="36" rx="18" fill="#5cdbd3"/>
+    <text x="456" y="533" fill="#f4f9fa" font-weight="700">4 / 14</text>
+
+    <text x="80" y="606" fill="#f4f9fa">Palm &amp; fingers</text>
+    <rect x="290" y="578" width="520" height="36" rx="18" fill="#293137"/>
+    <rect x="290" y="578" width="149" height="36" rx="18" fill="#5cdbd3"/>
+    <text x="456" y="605" fill="#f4f9fa" font-weight="700">4 / 14</text>
+
+    <text x="80" y="678" fill="#f4f9fa">None</text>
+    <rect x="290" y="650" width="520" height="36" rx="18" fill="#293137"/>
+    <rect x="290" y="650" width="74" height="36" rx="18" fill="#5cdbd3"/>
+    <text x="381" y="677" fill="#f4f9fa" font-weight="700">2 / 14</text>
+  </g>
+
+  <line x1="900" y1="190" x2="900" y2="752" stroke="#344047" stroke-width="2"/>
+
+  <text x="980" y="212" fill="#f4f9fa" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Experience ratings</text>
+  <text x="980" y="246" fill="#9faeb4" font-family="Inter, Arial, sans-serif" font-size="19">Average score on a 5-point scale</text>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="980" y="328" fill="#f4f9fa" font-size="23">Functionality</text>
+    <text x="1460" y="328" fill="#f4f9fa" font-size="30" font-weight="700" text-anchor="end">4.50 / 5</text>
+    <rect x="980" y="354" width="480" height="30" rx="15" fill="#293137"/>
+    <rect x="980" y="354" width="432" height="30" rx="15" fill="#5cdbd3"/>
+
+    <text x="980" y="470" fill="#f4f9fa" font-size="23">Ease of use</text>
+    <text x="1460" y="470" fill="#f4f9fa" font-size="30" font-weight="700" text-anchor="end">3.57 / 5</text>
+    <rect x="980" y="496" width="480" height="30" rx="15" fill="#293137"/>
+    <rect x="980" y="496" width="343" height="30" rx="15" fill="#5cdbd3"/>
+
+    <text x="980" y="612" fill="#f4f9fa" font-size="23">Appearance</text>
+    <text x="1460" y="612" fill="#f4f9fa" font-size="30" font-weight="700" text-anchor="end">2.43 / 5</text>
+    <rect x="980" y="638" width="480" height="30" rx="15" fill="#293137"/>
+    <rect x="980" y="638" width="233" height="30" rx="15" fill="#f4c95d"/>
+  </g>
+
+  <text x="80" y="824" fill="#9faeb4" font-family="Inter, Arial, sans-serif" font-size="18">Source: synthesis of 14 operator survey responses. Baseline findings only; no post-design survey was recorded.</text>
+</svg>
