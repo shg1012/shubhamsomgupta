@@ -38,6 +38,7 @@ Use the category template that matches the work:
 - `digital-experience.md`
 - `industrial-experience.md`
 - `branding-and-identity.md`
+- `retail-and-interior-design.md` (uses the existing Brand, Identity & Retail category)
 
 Images can be referenced relative to the project folder in frontmatter or Markdown:
 
