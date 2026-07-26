@@ -62,17 +62,16 @@ function MarkdownImage({
     return null;
   }
 
+  const sizeMatch = title?.match(/\s*\{size=(compact|small)\}\s*$/i);
+  const size = sizeMatch?.[1].toLowerCase();
+  const caption = title?.replace(/\s*\{size=(compact|small)\}\s*$/i, '').trim();
+
   return (
-    <figure className="case-study-figure">
+    <figure className={`case-study-figure${size ? ` case-study-figure--${size}` : ''}`}>
       <img src={src} alt={alt ?? ''} loading="lazy" decoding="async" />
-      {title ? <figcaption>{title}</figcaption> : null}
+      {caption ? <figcaption>{caption}</figcaption> : null}
     </figure>
   );
-}
-
-function isMarkdownFigureOnly(children: ReactNode) {
-  const childArray = Children.toArray(children);
-  return childArray.length === 1 && isValidElement(childArray[0]) && childArray[0].type === MarkdownImage;
 }
 
 const markdownComponents: Components = {
@@ -117,8 +116,12 @@ const markdownComponents: Components = {
     return <MarkdownImage src={src} alt={alt} title={title} />;
   },
   p({ node, children, ...props }) {
-    void node;
-    if (isMarkdownFigureOnly(children)) {
+    const hasOnlyImage =
+      node?.children.length === 1 &&
+      node.children[0].type === 'element' &&
+      node.children[0].tagName === 'img';
+
+    if (hasOnlyImage) {
       return <>{children}</>;
     }
 
@@ -136,6 +139,18 @@ const markdownComponents: Components = {
 
 export function MarkdownCaseStudy({ project }: MarkdownCaseStudyProps) {
   const headings = project.depth === 'flagship' ? extractHeadings(project.content) : [];
+  const scrollToHeading = (headingId: string) => {
+    const heading = document.getElementById(headingId);
+
+    if (!heading) {
+      return;
+    }
+
+    heading.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  };
   const starCards = [
     { letter: 'S', title: 'Situation', body: project.star.situation },
     { letter: 'T', title: 'Task', body: project.star.task },
@@ -149,7 +164,14 @@ export function MarkdownCaseStudy({ project }: MarkdownCaseStudyProps) {
         <nav className="case-study-toc glass-card" aria-label="Case study sections">
           <span>Contents</span>
           {headings.map((heading) => (
-            <a href={`#${heading.id}`} key={heading.id}>
+            <a
+              href={`#/project/${project.slug}#${heading.id}`}
+              key={heading.id}
+              onClick={(event) => {
+                event.preventDefault();
+                scrollToHeading(heading.id);
+              }}
+            >
               {heading.title}
             </a>
           ))}

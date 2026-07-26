@@ -7,7 +7,7 @@ export type ProjectCardSize = 'small' | 'medium' | 'wide' | 'hero';
 
 export type ProjectTheme = 'cyan' | 'blue' | 'violet' | 'magenta' | 'slate';
 
-export type DeviceMockup = 'laptop' | 'phone' | 'dual' | 'dashboard' | 'brand-system';
+export type DeviceMockup = 'laptop' | 'phone' | 'dual' | 'dashboard' | 'brand-system' | 'product';
 
 export type ProjectDepth = 'flagship' | 'compact';
 

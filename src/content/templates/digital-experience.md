@@ -40,7 +40,7 @@ seo:
 draft: true
 order: 999
 cardSize: "medium" # small, medium, wide, hero
-deviceMockup: "laptop" # laptop, phone, dual, dashboard, brand-system
+deviceMockup: "laptop" # laptop, phone, dual, dashboard, brand-system, product
 ---
 
 <!-- Keep the customer statement evidence-based. Do not present invented wording as a direct quote. -->

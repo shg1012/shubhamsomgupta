@@ -2121,6 +2121,16 @@ body:has(.hero-section--intro) .nav-shell {
   filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.32));
 }
 
+.product-image {
+  display: block;
+  width: min(100%, 760px);
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.32));
+  transition: transform 240ms ease;
+}
+
 .project-card--hero .figma-device-img,
 .project-card--wide .figma-device-img {
   width: min(100%, 840px);

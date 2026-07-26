@@ -49,10 +49,12 @@ hero:
 
 ```markdown
 ![Accessible alt text](./images/workflow.webp "Visible caption text")
+![Accessible alt text](./images/logo.webp "Centered small image {size=small}")
 ```
 
 The image alt text remains the accessible description. The optional Markdown title becomes the visible
-caption.
+caption. Add `{size=compact}` for a responsive 400px maximum width or `{size=small}` for a responsive
+300px maximum width; both remain centered with their captions.
 
 Set `featured: true` for projects that should be eligible for featured homepage treatment, and use
 `cardSize` to preserve the intended card layout. Set `draft: true` to hide the project from production

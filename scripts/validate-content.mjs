@@ -76,7 +76,9 @@ const projectSchema = z
     draft: z.boolean(),
     order: z.number().int(),
     cardSize: z.enum(['small', 'medium', 'wide', 'hero']).optional(),
-    deviceMockup: z.enum(['laptop', 'phone', 'dual', 'dashboard', 'brand-system']).optional(),
+    deviceMockup: z
+      .enum(['laptop', 'phone', 'dual', 'dashboard', 'brand-system', 'product'])
+      .optional(),
   })
   .strict();
 

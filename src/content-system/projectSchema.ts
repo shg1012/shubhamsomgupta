@@ -12,7 +12,14 @@ export const PROJECT_THEME_VALUES = ['cyan', 'blue', 'violet', 'magenta', 'slate
 
 export const PROJECT_CARD_SIZE_VALUES = ['small', 'medium', 'wide', 'hero'] as const;
 
-export const DEVICE_MOCKUP_VALUES = ['laptop', 'phone', 'dual', 'dashboard', 'brand-system'] as const;
+export const DEVICE_MOCKUP_VALUES = [
+  'laptop',
+  'phone',
+  'dual',
+  'dashboard',
+  'brand-system',
+  'product',
+] as const;
 
 const requiredString = z.string().trim().min(1);
 
