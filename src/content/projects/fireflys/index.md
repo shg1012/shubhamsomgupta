@@ -4,6 +4,8 @@ slug: "fireflys"
 category: "industrial-experience"
 summary: >-
   A working drone prototype designed to detect early-stage wildfires through a stabilised, sensor-carrying payload and ground-control interface.
+proofLine: >-
+  Four payload iterations led to an integrated prototype flown at Aalto Design Factory's Final Gala.
 overview: >-
   An interdisciplinary product-development project combining drone engineering, industrial design, sensor housing, mechanical integration, prototyping, and a ground-control concept for early wildfire detection.
 year: "2019–2020"
@@ -14,6 +16,31 @@ theme: "cyan"
 client: "Product Development Project, Aalto University Design Factory"
 role: "Mechanical Engineer & Industrial Designer"
 timeline: "11 months"
+contribution: >-
+  Owned the mechanical and industrial design of the sensor payload housing, gimbal integration, and drone attachment; created and tested 3D-printed iterations and supported final assembly.
+collaborators:
+  - "Nine-person interdisciplinary student team"
+  - "IIT professor providing drone-fundamentals and assembly guidance"
+methods:
+  - "Firefighter interviews as a research input"
+  - "Concept sketching"
+  - "3D modelling"
+  - "Additive manufacturing"
+  - "Mechanical prototyping"
+  - "Assembly and integration testing"
+evidenceToDecision:
+  situation: >-
+    Early wildfire detection from the air required a sensor to remain protected, oriented, securely attached, and connected to a usable ground workflow.
+  evidence: >-
+    Five firefighter interviews informed the project, while documented component requirements and physical prototypes exposed fit, fastening, wiring, balance, and integration constraints; detailed interview findings are unavailable.
+  insight: >-
+    The sensing payload had to be designed as one connected subsystem with the gimbal, aircraft, electronics, and ground-control concept rather than as a standalone enclosure.
+  decision: >-
+    Develop a modular sensor housing on a two-axis gimbal, joined to the multirotor through a secure bracket and paired with a ground-control interface concept.
+  artifact: >-
+    Four major payload iterations and an integrated multirotor prototype with a stabilised sensor assembly.
+  outcome: >-
+    The team assembled and flew the prototype at the Aalto Design Factory Final Gala; the archive does not establish field-validated wildfire-detection performance.
 tags:
   - "Industrial Design"
   - "Mechanical"

@@ -54,6 +54,17 @@ const starSchema = z
   })
   .strict();
 
+const evidenceToDecisionSchema = z
+  .object({
+    situation: requiredString,
+    evidence: requiredString,
+    insight: requiredString,
+    decision: requiredString,
+    artifact: requiredString,
+    outcome: requiredString,
+  })
+  .strict();
+
 export const projectFrontmatterSchema = z
   .object({
     title: requiredString,
@@ -62,6 +73,7 @@ export const projectFrontmatterSchema = z
     }),
     category: z.enum(PROJECT_CATEGORY_VALUES),
     summary: requiredString,
+    proofLine: requiredString.optional(),
     overview: requiredString.optional(),
     year: z.union([z.string(), z.number()]).transform(String),
     status: requiredString,
@@ -71,6 +83,10 @@ export const projectFrontmatterSchema = z
     client: requiredString,
     role: requiredString,
     timeline: requiredString,
+    contribution: requiredString.optional(),
+    collaborators: z.array(requiredString).min(1).optional(),
+    methods: z.array(requiredString).min(1).optional(),
+    evidenceToDecision: evidenceToDecisionSchema.optional(),
     tags: z.array(requiredString).min(1),
     voiceOfCustomer: voiceOfCustomerSchema,
     star: starSchema,

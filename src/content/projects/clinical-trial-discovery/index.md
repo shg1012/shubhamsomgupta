@@ -4,6 +4,8 @@ slug: "clinical-trial-discovery"
 category: "digital-experience"
 summary: >-
   A patient-centred discovery experience designed to make complex eligibility information easier to understand.
+proofLine: >-
+  Research translated complex eligibility into guided matching, plain-language criteria, and saved comparisons.
 overview: >-
   A guided exploration pattern for patients and caregivers comparing clinical trial options.
 year: "2025"

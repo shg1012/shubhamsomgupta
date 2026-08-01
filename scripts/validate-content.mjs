@@ -35,6 +35,17 @@ const starSchema = z
   })
   .strict();
 
+const evidenceToDecisionSchema = z
+  .object({
+    situation: requiredString,
+    evidence: requiredString,
+    insight: requiredString,
+    decision: requiredString,
+    artifact: requiredString,
+    outcome: requiredString,
+  })
+  .strict();
+
 const projectSchema = z
   .object({
     title: requiredString,
@@ -43,6 +54,7 @@ const projectSchema = z
     }),
     category: z.enum(['digital-experience', 'industrial-experience', 'branding-and-identity']),
     summary: requiredString,
+    proofLine: requiredString.optional(),
     overview: requiredString.optional(),
     year: z.union([z.string(), z.number()]).transform(String),
     status: requiredString,
@@ -52,6 +64,10 @@ const projectSchema = z
     client: requiredString,
     role: requiredString,
     timeline: requiredString,
+    contribution: requiredString.optional(),
+    collaborators: z.array(requiredString).min(1).optional(),
+    methods: z.array(requiredString).min(1).optional(),
+    evidenceToDecision: evidenceToDecisionSchema.optional(),
     tags: z.array(requiredString).min(1),
     voiceOfCustomer: voiceOfCustomerSchema,
     star: starSchema,
@@ -104,7 +120,9 @@ function validateFrontmatter(data, filePath) {
 }
 
 function isExternalUrl(value) {
-  return /^(?:[a-z]+:)?\/\//i.test(value) || value.startsWith('mailto:') || value.startsWith('tel:');
+  return (
+    /^(?:[a-z]+:)?\/\//i.test(value) || value.startsWith('mailto:') || value.startsWith('tel:')
+  );
 }
 
 function validateProjectAsset(projectFolder, value, filePath) {
@@ -155,6 +173,12 @@ async function main() {
       const parsed = matter(raw);
       const frontmatter = validateFrontmatter(parsed.data, filePath);
       const folderSlug = path.basename(path.dirname(filePath));
+
+      if (!frontmatter.draft && !parsed.content.trim()) {
+        throw new Error(
+          `${toRelative(filePath)}: published projects must include case-study content.`,
+        );
+      }
 
       if (frontmatter.slug !== folderSlug) {
         throw new Error(

@@ -4,6 +4,8 @@ slug: "onex-healthcare-operations"
 category: "digital-experience"
 summary: >-
   A confidential, ongoing platform-design initiative that unifies shared healthcare operations services into one coherent experience.
+proofLine: >-
+  Shared services, information architecture, and 200+ prototype iterations shaped a reusable platform direction.
 overview: >-
   OneX establishes a common foundation for healthcare operations: shared services, clear information architecture, global readiness, and human-centred AI assistance.
 year: "2023–present"
@@ -14,6 +16,28 @@ theme: "cyan"
 client: "Leading Dutch healthcare company"
 role: "Senior UX Designer"
 timeline: "2023–present"
+contribution: >-
+  Shaped the platform vision, user and persona work, information architecture, UX principles, shared services, global-readiness foundations, and human-centred AI direction.
+methods:
+  - "Stakeholder interviews"
+  - "Workflow mapping"
+  - "Stakeholder workshops"
+  - "Information architecture"
+  - "Design critiques and prototype reviews"
+  - "Usability testing"
+evidenceToDecision:
+  situation: >-
+    Healthcare operations were distributed across specialised applications, shared services, roles, and global contexts.
+  evidence: >-
+    Five interview participants, 15+ stakeholder workshops, 200+ prototype iterations, and 10+ usability-test sessions informed the direction; confidential findings and screens are not disclosed publicly.
+  insight: >-
+    Shared capabilities are part of complete workflows, context must persist across applications, and dense operational work needs consistent patterns, progressive disclosure, and governed AI assistance.
+  decision: >-
+    Establish a common platform foundation around shared services, object-based information architecture, global readiness, reusable interaction patterns, and human oversight of AI.
+  artifact: >-
+    An ongoing platform direction with common UX principles, shared-service patterns, information architecture, and a conceptual public platform map.
+  outcome: >-
+    The work established a reusable platform direction; the public evidence supports activity and an estimate, not adoption, realised revenue, or measured operational impact.
 tags:
   - "Product Strategy"
   - "Platform Design"

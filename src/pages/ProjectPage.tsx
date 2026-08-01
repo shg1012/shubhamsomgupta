@@ -18,33 +18,48 @@ export function ProjectPage() {
 
   const category = getCategory(project.category);
   const categoryProjects = getProjectsByCategory(project.category);
+  const hasProjectContext = Boolean(
+    project.contribution || project.methods?.length || project.collaborators?.length,
+  );
   const currentIndex = categoryProjects.findIndex((item) => item.slug === project.slug);
   const previousProject =
     categoryProjects[(currentIndex - 1 + categoryProjects.length) % categoryProjects.length];
   const nextProject = categoryProjects[(currentIndex + 1) % categoryProjects.length];
 
   return (
-    <div className="page-shell project-page">
+    <div
+      className={`page-shell project-page project-page--${project.category} project-page--${project.depth}`}
+    >
       <section className={`project-hero theme-${project.theme}`}>
+        <span className="project-hero__number" aria-hidden="true">
+          {String(currentIndex + 1).padStart(2, '0')}
+        </span>
         <div className="project-hero__copy">
           <Link className="breadcrumb" to={`/work/${project.category}`}>
             <span className="breadcrumb-icon" aria-hidden="true">
               <ArrowRightIcon />
             </span>
-            back
+            {category?.title ?? 'Back to work'}
           </Link>
+          <p className="eyebrow">
+            Case study / {String(currentIndex + 1).padStart(2, '0')} ·{' '}
+            {project.status ?? project.depth}
+          </p>
           <h1>{project.title}</h1>
           <p>{project.overview ?? project.shortDescription}</p>
+          {project.proofLine ? (
+            <strong className="project-hero__proof">{project.proofLine}</strong>
+          ) : null}
           <div className="tag-row">
             {project.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
         </div>
-        <ProjectVisual project={project} />
+        <ProjectVisual project={project} context="hero" />
       </section>
 
-      <section className="project-summary glass-card">
+      <section className="project-summary" aria-label="Project facts">
         <div>
           <span>Year</span>
           <strong>{project.year ?? 'TBD'}</strong>
@@ -59,12 +74,45 @@ export function ProjectPage() {
         </div>
         <div>
           <span>Timeline</span>
-          <strong>{project.duration ?? project.status ?? 'Ongoing'}</strong>
+          <strong>{project.duration ?? 'Ongoing'}</strong>
+        </div>
+        <div>
+          <span>Status</span>
+          <strong>{project.status ?? 'Case study'}</strong>
         </div>
       </section>
 
+      {hasProjectContext ? (
+        <section className="project-at-a-glance" aria-labelledby="at-a-glance-title">
+          <div className="project-at-a-glance__heading">
+            <p className="eyebrow">At a glance</p>
+            <h2 id="at-a-glance-title">What I brought to the work</h2>
+          </div>
+          <dl>
+            {project.contribution ? (
+              <div>
+                <dt>Contribution</dt>
+                <dd>{project.contribution}</dd>
+              </div>
+            ) : null}
+            {project.methods?.length ? (
+              <div>
+                <dt>Methods</dt>
+                <dd>{project.methods.join(' · ')}</dd>
+              </div>
+            ) : null}
+            {project.collaborators?.length ? (
+              <div>
+                <dt>Collaboration</dt>
+                <dd>{project.collaborators.join(' · ')}</dd>
+              </div>
+            ) : null}
+          </dl>
+        </section>
+      ) : null}
+
       {project.metrics ? (
-        <section className="metric-panel glass-card" aria-label="Project metrics">
+        <section className="metric-panel" aria-label="Project metrics">
           {project.metrics.map((metric) => (
             <div className="metric-card" key={metric.label}>
               <strong>{metric.value}</strong>

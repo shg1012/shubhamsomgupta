@@ -4,6 +4,8 @@ slug: "nescafe-connected-coffee-mug"
 category: "branding-and-identity"
 summary: >-
   A retail concept proposal that translated a connected coffee-mug idea into sensory, experiential display directions.
+proofLine: >-
+  Three retail directions translated the connected mug into a five-senses experience proposal.
 overview: >-
   An image-led exploration of how a connected coffee mug could become a memorable Nescafé retail encounter through form, light, material, and the five senses.
 year: "2018"
@@ -14,6 +16,27 @@ theme: "magenta"
 client: "Nescafé"
 role: "Sr. Industrial Designer"
 timeline: "3 months · 2018"
+contribution: >-
+  Developed three retail directions through mood-board studies, spatial and industrial-design sketching, 3D visualisation, and a five-senses experience framework.
+methods:
+  - "Mood-board development"
+  - "Spatial concept sketching"
+  - "Industrial-design ideation"
+  - "3D concept visualisation"
+  - "Five-senses experience framing"
+evidenceToDecision:
+  situation: >-
+    A connected coffee-mug concept needed a retail expression that could make the product tangible and memorable at the point of encounter.
+  evidence: >-
+    The supplied brief, product-system visuals, mood board, sketches, and concept archive framed an experience centred on form, light, material, and sensory engagement; no user study or production brief was supplied.
+  insight: >-
+    The proposal treated the mug as the centre of a physical encounter rather than as an object presented only on a pack or shelf.
+  decision: >-
+    Explore three spatial directions and map sight, smell, sound, taste, and touch to proposed retail moments around the product.
+  artifact: >-
+    Three visual retail concepts supported by a mood board, sketches, renders, product visuals, and a sensory-experience framework.
+  outcome: >-
+    The archive documents concept proposals only; installation, testing, client approval, manufacturing, and commercial rollout are not evidenced.
 tags:
   - "Retail Design"
   - "Identity"

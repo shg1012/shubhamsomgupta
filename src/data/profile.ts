@@ -5,7 +5,7 @@ export const profile = {
   email: 'shubham@ssgupta.in',
   headline: 'I help bring chaos to clarity',
   intro:
-    'Senior UX designer creating thoughtful digital products, healthcare experiences, visual identities and stories through photography.',
+    'Senior UX designer simplifying complex healthcare and operational systems through research, service design, and interaction design.',
   shortBio:
     'I work across product strategy, interaction design, research synthesis, and visual systems to make complex services feel calmer, clearer, and more useful.',
   longBio:

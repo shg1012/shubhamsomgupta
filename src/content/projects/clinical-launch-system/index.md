@@ -4,6 +4,8 @@ slug: "clinical-launch-system"
 category: "branding-and-identity"
 summary: >-
   A launch toolkit for a clinical service, including messaging hierarchy, presentation patterns, and digital assets.
+proofLine: >-
+  One modular messaging system aligned decks, one-pagers, social assets, and service explainers.
 year: "2024"
 status: "Launch toolkit"
 featured: false

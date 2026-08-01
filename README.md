@@ -44,13 +44,13 @@ Images can be referenced relative to the project folder in frontmatter or Markdo
 
 ```yaml
 hero:
-  image: "./images/hero.webp"
-  alt: "Accessible description of the hero image."
+  image: './images/hero.webp'
+  alt: 'Accessible description of the hero image.'
 ```
 
 ```markdown
-![Accessible alt text](./images/workflow.webp "Visible caption text")
-![Accessible alt text](./images/logo.webp "Centered small image {size=small}")
+![Accessible alt text](./images/workflow.webp 'Visible caption text')
+![Accessible alt text](./images/logo.webp 'Centered small image {size=small}')
 ```
 
 The image alt text remains the accessible description. The optional Markdown title becomes the visible
@@ -58,9 +58,32 @@ caption. Add `{size=compact}` for a responsive 400px maximum width or `{size=sma
 300px maximum width; both remain centered with their captions.
 
 Set `featured: true` for projects that should be eligible for featured homepage treatment, and use
-`cardSize` to preserve the intended card layout. Set `draft: true` to hide the project from production
-builds while keeping it available in local development. Use `depth: flagship` for fuller case studies
-with a table of contents; use `depth: compact` for shorter, honest project entries.
+`order` to control which featured project appears first. Use `cardSize` to preserve the intended card
+layout. Set `draft: true` to hide the project from production builds while keeping it available in
+local development. Use `depth: flagship` for fuller case studies with a table of contents; use
+`depth: compact` for shorter, honest project entries.
+
+Use the optional scan-friendly fields when the underlying evidence supports them:
+
+```yaml
+proofLine: 'One concise, evidence-backed reason to open this project.'
+contribution: 'A clear sentence describing what you personally led or contributed.'
+collaborators:
+  - 'Product and engineering partners'
+methods:
+  - 'Workflow mapping'
+  - 'Prototype testing'
+evidenceToDecision:
+  situation: 'The relevant starting context.'
+  evidence: 'What was observed, measured, or supplied.'
+  insight: 'What that evidence meant.'
+  decision: 'What changed because of it.'
+  artifact: 'The design output that carried the decision.'
+  outcome: 'A qualified shipped result, prototype finding, or project output.'
+```
+
+Omit optional fields that are not supported. Present-but-empty optional arrays fail validation, and
+published projects must include a non-empty Markdown body.
 
 Run validation before publishing:
 

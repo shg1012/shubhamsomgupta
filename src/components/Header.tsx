@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { navigationItems } from '../data/navigation';
+import { profile } from '../data/profile';
 import { getProject } from '../data/projects';
-import { HomeIcon } from './HomeIcon';
+import { ArrowRightIcon } from './ArrowRightIcon';
 
 export function Header() {
   const { pathname } = useLocation();
@@ -82,12 +83,14 @@ export function Header() {
         Skip to content
       </a>
       <div className="nav-shell" aria-label="Primary">
-        <Link
-          className={`brand-mark${isHomePage ? '' : ' brand-mark--icon'}`}
-          to="/"
-          aria-label="Shubham S. Gupta home"
-        >
-          {isHomePage ? <span>designer, engineer, photographer</span> : <HomeIcon />}
+        <Link className="brand-mark" to="/" aria-label="Shubham S. Gupta home">
+          <span className="brand-mark__monogram" aria-hidden="true">
+            SSG
+          </span>
+          <span className="brand-mark__copy">
+            <strong>{profile.name}</strong>
+            <small>{profile.role}</small>
+          </span>
         </Link>
         <button
           ref={menuButtonRef}
@@ -115,10 +118,9 @@ export function Header() {
             </NavLink>
           ))}
         </nav>
-        <Link className="email-pill" to="/" aria-label="Shubham S. Gupta home">
-          <span>shubham</span>
-          <span className="email-pill__x">x</span>
-          <span>gupta.in</span>
+        <Link className="email-pill" to="/contact">
+          <span>Let&apos;s talk</span>
+          <ArrowRightIcon />
         </Link>
       </div>
       <button
@@ -167,9 +169,7 @@ export function Header() {
               to={item.to}
               tabIndex={isMenuOpen ? 0 : -1}
               className={({ isActive }) =>
-                `mobile-menu-link${
-                  isActive || item.to === activeCategoryPath ? ' is-active' : ''
-                }`
+                `mobile-menu-link${isActive || item.to === activeCategoryPath ? ' is-active' : ''}`
               }
               onClick={() => closeMenu()}
             >

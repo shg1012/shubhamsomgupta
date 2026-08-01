@@ -4,6 +4,8 @@ slug: "studio-portfolio-identity"
 category: "branding-and-identity"
 summary: >-
   An editorial identity direction for a multidisciplinary creative practice balancing product work and photography.
+proofLine: >-
+  One evolving editorial system connects product design and photography without overpowering the work.
 year: "2023"
 status: "In progress"
 featured: false

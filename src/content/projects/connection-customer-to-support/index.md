@@ -4,6 +4,8 @@ slug: "connection-customer-to-support"
 category: "digital-experience"
 summary: >-
   Integrating customer support into a clinical precision-medicine platform so users could find the right channel, preserve context, and begin resolving an issue without leaving their workflow.
+proofLine: >-
+  An implemented support workflow averaged under one minute across seven representative users.
 overview: >-
   A four-week UX initiative that turned a fragmented support journey into an implemented, configurable in-product experience, validated with seven representative users.
 year: "2022"
@@ -14,6 +16,32 @@ theme: "cyan"
 client: "IntelliSpace Precision Medicine"
 role: "UX Designer"
 timeline: "2 sprints · 4 weeks"
+contribution: >-
+  Designed the user and administrator support flows from research and prototyping through usability testing and implementation support, then shaped the later structured-email enhancement.
+collaborators:
+  - "Product Owner"
+  - "Usability Designer"
+  - "Engineering team"
+methods:
+  - "Stakeholder alignment"
+  - "Customer-correspondence review"
+  - "Heuristic and design-language review"
+  - "Secondary research"
+  - "Interaction design and prototyping"
+  - "Timed usability testing"
+evidenceToDecision:
+  situation: >-
+    Clinical-platform users could encounter an access issue without a clear in-product route to the right support team or channel.
+  evidence: >-
+    Customer correspondence, experience reviews, and support-pattern research exposed fragmented regional and product-specific routes and handoffs that lacked useful context.
+  insight: >-
+    Support needed to appear at the point of failure, route people to configured channels, and preserve enough product context for the receiving team to act.
+  decision: >-
+    Create a focused support bridge on the login and authenticated surfaces, backed by administrator-controlled contact and ticketing options, then structure the email handoff.
+  artifact: >-
+    Implemented login and in-product support panels, administrator configuration, and a later guided email workflow.
+  outcome: >-
+    The initial experience shipped in two sprints; seven representative users completed the tested workflow in under one minute on average, and the email enhancement followed approximately six months later.
 tags:
   - "Customer Support"
   - "UX Design"

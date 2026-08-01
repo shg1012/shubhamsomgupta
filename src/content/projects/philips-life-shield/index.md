@@ -4,6 +4,8 @@ slug: "philips-life-shield"
 category: "industrial-experience"
 summary: >-
   A three-month industrial-design internship concept exploring a modular emergency-care platform for bringing diagnostic, monitoring, and trauma-support equipment closer to the patient.
+proofLine: >-
+  Workflow, spatial, and ergonomic research became a high-fidelity modular emergency-care concept.
 overview: >-
   A research-led industrial-design concept developed during a Philips internship, translating emergency-ward workflows, ergonomics, product analysis, and broad sketch exploration into a high-fidelity mobile care platform.
 year: "2020"
@@ -14,6 +16,30 @@ theme: "blue"
 client: "Philips"
 role: "Industrial Design Intern"
 timeline: "3 months"
+contribution: >-
+  Led research synthesis, patient-journey and emergency-workflow analysis, ergonomics and requirements, sketch exploration, CAD development, feature definition, and final visualisation.
+collaborators:
+  - "Mr. Sundarjeeth Jadhav — project mentor"
+methods:
+  - "Research synthesis and problem framing"
+  - "Patient-journey and emergency-workflow mapping"
+  - "Stakeholder, product, and competitive analysis"
+  - "Spatial and ergonomic analysis"
+  - "Requirement development"
+  - "Sketching, CAD, and contextual visualisation"
+evidenceToDecision:
+  situation: >-
+    Emergency-care work brought time pressure, equipment, storage, constrained space, and multiple clinical roles together around the patient.
+  evidence: >-
+    Patient journeys, an emergency-workflow map, recorded floor-plan dimensions, emergency-cart observation, and product, stakeholder, competitive, and ergonomic analyses defined the opportunity and constraints.
+  insight: >-
+    A mobile platform could organise diagnostic, monitoring, storage, and emergency-support functions closer to the patient instead of treating each need as an isolated product or room feature.
+  decision: >-
+    Develop Life Shield as a configurable mobile concept with modular storage, articulated display support, oxygen access, multidirectional mobility, and other feature proposals.
+  artifact: >-
+    A high-fidelity CAD proposal, documented form iterations, feature renders, and conceptual in-context visualisations.
+  outcome: >-
+    The project produced a resolved industrial-design proposal; no physical prototype, clinician evaluation, engineering validation, manufacturing development, or launch is evidenced.
 tags:
   - "Industrial Design"
   - "Healthcare"

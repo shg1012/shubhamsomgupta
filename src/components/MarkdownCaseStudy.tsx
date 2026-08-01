@@ -49,15 +49,7 @@ function markdownUrlTransform(url: string, key: string) {
   return defaultUrlTransform(url);
 }
 
-function MarkdownImage({
-  src,
-  alt,
-  title,
-}: {
-  src?: string;
-  alt?: string;
-  title?: string;
-}) {
+function MarkdownImage({ src, alt, title }: { src?: string; alt?: string; title?: string }) {
   if (!src) {
     return null;
   }
@@ -157,9 +149,21 @@ export function MarkdownCaseStudy({ project }: MarkdownCaseStudyProps) {
     { letter: 'A', title: 'Action', body: project.star.action },
     { letter: 'R', title: 'Result', body: project.star.result },
   ];
+  const decisionTrail = project.evidenceToDecision
+    ? [
+        { title: 'Situation', body: project.evidenceToDecision.situation },
+        { title: 'Evidence', body: project.evidenceToDecision.evidence },
+        { title: 'Insight', body: project.evidenceToDecision.insight },
+        { title: 'Decision', body: project.evidenceToDecision.decision },
+        { title: 'Artifact', body: project.evidenceToDecision.artifact },
+        { title: 'Outcome', body: project.evidenceToDecision.outcome },
+      ]
+    : [];
 
   return (
-    <section className={`case-study-stack markdown-case-study markdown-case-study--${project.depth}`}>
+    <section
+      className={`case-study-stack markdown-case-study markdown-case-study--${project.depth}`}
+    >
       {headings.length > 2 ? (
         <nav className="case-study-toc glass-card" aria-label="Case study sections">
           <span>Contents</span>
@@ -176,6 +180,25 @@ export function MarkdownCaseStudy({ project }: MarkdownCaseStudyProps) {
             </a>
           ))}
         </nav>
+      ) : null}
+      {decisionTrail.length ? (
+        <section className="decision-trail" aria-labelledby="decision-trail-title">
+          <div className="decision-trail__heading">
+            <p className="eyebrow">Evidence to decision</p>
+            <h2 id="decision-trail-title">How the work moved forward</h2>
+          </div>
+          <ol>
+            {decisionTrail.map((step, index) => (
+              <li className="glass-card" key={step.title}>
+                <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
       ) : null}
       <div className="case-study-opening">
         <aside className="customer-voice glass-card" aria-label="Voice of customer">

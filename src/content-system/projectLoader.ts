@@ -35,11 +35,16 @@ function toProject(sourcePath: string, rawSource: string): Project {
   const thumbnail = resolveProjectAsset(folderSlug, thumbnailSource.image, sourcePath);
   const content = resolveMarkdownImagePaths(parsedMarkdown.content.trim(), folderSlug, sourcePath);
 
+  if (!frontmatter.draft && !content) {
+    throw new Error(`${sourcePath}: published projects must include case-study content.`);
+  }
+
   return {
     slug: frontmatter.slug,
     title: frontmatter.title,
     category: frontmatter.category,
     shortDescription: frontmatter.summary,
+    proofLine: frontmatter.proofLine,
     overview: frontmatter.overview,
     content,
     tags: frontmatter.tags,
@@ -50,6 +55,10 @@ function toProject(sourcePath: string, rawSource: string): Project {
     client: frontmatter.client,
     duration: frontmatter.timeline,
     status: frontmatter.status,
+    contribution: frontmatter.contribution,
+    collaborators: frontmatter.collaborators,
+    methods: frontmatter.methods,
+    evidenceToDecision: frontmatter.evidenceToDecision,
     depth: frontmatter.depth,
     thumbnail,
     thumbnailAlt: thumbnailSource.alt,
@@ -88,7 +97,8 @@ function loadProjects() {
   return loadedProjects
     .filter((project) => !(import.meta.env.PROD && project.draft))
     .sort((a, b) => {
-      const orderDifference = (a.order ?? Number.MAX_SAFE_INTEGER) - (b.order ?? Number.MAX_SAFE_INTEGER);
+      const orderDifference =
+        (a.order ?? Number.MAX_SAFE_INTEGER) - (b.order ?? Number.MAX_SAFE_INTEGER);
       return orderDifference === 0 ? a.title.localeCompare(b.title) : orderDifference;
     });
 }
@@ -100,7 +110,8 @@ export const getProject = (slug: string) => projects.find((project) => project.s
 export const getProjectsByCategory = (category: ProjectCategorySlug) =>
   projects.filter((project) => project.category === category);
 
-export const getFeaturedProject = () => projects.find((project) => project.cardSize === 'hero');
+const getFeaturedProjects = () => projects.filter((project) => project.featured);
 
-export const getSecondaryFeaturedProject = () =>
-  projects.find((project) => project.slug === 'clinical-trial-discovery');
+export const getFeaturedProject = () => getFeaturedProjects()[0];
+
+export const getSecondaryFeaturedProject = () => getFeaturedProjects()[1];

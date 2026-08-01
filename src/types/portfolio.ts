@@ -1,7 +1,5 @@
 export type ProjectCategorySlug =
-  | 'digital-experience'
-  | 'industrial-experience'
-  | 'branding-and-identity';
+  'digital-experience' | 'industrial-experience' | 'branding-and-identity';
 
 export type ProjectCardSize = 'small' | 'medium' | 'wide' | 'hero';
 
@@ -33,6 +31,15 @@ export interface ProjectStarSummary {
   result: string;
 }
 
+export interface ProjectEvidenceToDecision {
+  situation: string;
+  evidence: string;
+  insight: string;
+  decision: string;
+  artifact: string;
+  outcome: string;
+}
+
 export interface ProjectSection {
   title: string;
   body?: string;
@@ -46,6 +53,7 @@ export interface Project {
   title: string;
   category: ProjectCategorySlug;
   shortDescription: string;
+  proofLine?: string;
   overview?: string;
   content: string;
   tags: string[];
@@ -56,6 +64,10 @@ export interface Project {
   client?: string;
   duration?: string;
   status?: string;
+  contribution?: string;
+  collaborators?: string[];
+  methods?: string[];
+  evidenceToDecision?: ProjectEvidenceToDecision;
   depth: ProjectDepth;
   thumbnail: string;
   thumbnailAlt: string;

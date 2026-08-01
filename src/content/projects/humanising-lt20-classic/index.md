@@ -4,6 +4,8 @@ slug: "humanising-lt20-classic"
 category: "industrial-experience"
 summary: >-
   Redesigning a CNC lathe around operator ergonomics, safety, service access, and manufacturable engineering.
+proofLine: >-
+  Operator evidence shaped a manufacturing-aware CNC-lathe concept, native CAD, and a physical appearance model.
 overview: >-
   A nine-month industrial design collaboration with Ace Designers that translated field evidence, ergonomic constraints, and manufacturing realities into a coherent LT-20 Classic concept, native CAD, renders, and a physical appearance model.
 year: "2017"
@@ -14,6 +16,32 @@ theme: "blue"
 client: "Ace Designers, Bengaluru"
 role: "Industrial Designer in a two-person team"
 timeline: "January-September 2017 · 9 months"
+contribution: >-
+  Co-led user research and ergonomics with Aditya Sharma, then owned concept sketching, 3D modelling, and rendering while sharing concept selection and major design decisions.
+collaborators:
+  - "Aditya Sharma — research, ergonomics, presentation, branding, stakeholder management, and future brand narrative"
+  - "Ace Designers — industrial partner, machine access, and stakeholder context"
+methods:
+  - "Stakeholder interviews"
+  - "Shop-floor observation"
+  - "Exploratory operator survey"
+  - "Ergonomic analysis"
+  - "Competitor benchmarking"
+  - "Concept sketching and selection"
+  - "Native CAD, rendering, and appearance modelling"
+evidenceToDecision:
+  situation: >-
+    The LT-20 Classic was technically capable, but its fragmented enclosure, operator strain points, maintenance needs, and inconsistent visual language weakened the overall experience.
+  evidence: >-
+    Machine documentation, stakeholder and shop-floor research, IMTEX benchmarking, and a 14-response operator survey showed high functionality alongside weaker ease-of-use and appearance ratings and reported physical strain.
+  insight: >-
+    Appearance could not be separated from posture, guarding, service access, chip handling, manufacturing capability, and product-family coherence.
+  decision: >-
+    Advance the retained-guard direction because it stayed closer to in-house capability, avoided an imported roll-band mechanism, preserved the existing guard, and created storage within a unified enclosure.
+  artifact: >-
+    A selected concept developed through component-level native CAD, renders, engineering drawings, and a painted physical appearance model.
+  outcome: >-
+    The work resolved a manufacturing-aware industrial-design proposal; production adoption, functional validation, and measured post-design outcomes are not documented.
 tags:
   - "Industrial Design"
   - "Ergonomics"

@@ -48,10 +48,10 @@ export const photographyItems: PhotographyItem[] = [
   },
   {
     id: 'water-fern',
-    title: 'Gold Current',
+    title: 'Reed Camouflage',
     src: assetPath('images/photo-water-fern.png'),
-    alt: 'Golden aquatic leaves floating in dark water.',
-    caption: 'Texture, reflection, and a little accident of light.',
+    alt: 'A brown, streaked wading bird standing among wetland vegetation.',
+    caption: 'Pattern dissolving into reeds, water, and reflected light.',
     category: 'Nature',
     location: 'Dhanaulti Wetlands',
     year: '2025',
@@ -64,7 +64,7 @@ export const photographyItems: PhotographyItem[] = [
     alt: 'A bright blue sports car photographed as pedestrians pass by.',
     caption: 'An automotive frame interrupted by human scale.',
     category: 'Automotive',
-    location: 'Singapore',
+    location: 'Porsche Museum',
     year: '2025',
     orientation: 'wide',
   },
@@ -73,8 +73,6 @@ export const photographyItems: PhotographyItem[] = [
 export const photographyFilters: Array<'All' | PhotographyItem['category']> = [
   'All',
   'Nature',
-  'Street',
-  'People',
   'Automotive',
   'Black & White',
 ];

@@ -3,6 +3,7 @@ title: "Royal Coffee: Personalised Coffee Experience"
 slug: "provider-onboarding-system"
 category: "digital-experience"
 summary: "A 2020 UX design-task concept that helps people explore, customise, and order coffee online."
+proofLine: "A 41-participant survey and design-task synthesis shaped a mood-led coffee-selection concept."
 overview: "A research-led concept for Royal Coffee, designed to make an online coffee purchase feel more tangible through mood-led discovery, blend customisation, and a guided purchase flow."
 year: "2020"
 status: "Design-task concept"
@@ -12,6 +13,28 @@ theme: "slate"
 client: "Deloitte UX design task (Royal Coffee concept)"
 role: "UX Designer"
 timeline: "Not documented in the supplied materials"
+contribution: >-
+  Structured the survey and interview guide, synthesised the available research into personas and journey evidence, and created the task flows, storyboard, sitemap, wireframes, and high-fidelity concept.
+methods:
+  - "Survey and interview-guide design"
+  - "Benchmarking"
+  - "Personas and journey mapping"
+  - "Ideation and task flows"
+  - "Storyboarding and sitemap design"
+  - "Wireframing and high-fidelity concept design"
+evidenceToDecision:
+  situation: >-
+    A new coffee brand needed to make an online purchase feel more understandable and personal despite the lack of aroma, taste, and physical inspection.
+  evidence: >-
+    A 13-question survey with 41 participants, an interview guide, benchmarking, personas, a journey map, and recorded quotes highlighted uncertainty about coffee attributes and buying without sensory cues; the research is not presented as representative.
+  insight: >-
+    The experience needed an approachable entry into a large blend range, clearer product information, and enough control to build confidence in a sensory purchase.
+  decision: >-
+    Use mood as the first selection step, recommend a base blend, and then let customers adjust blends, grind, weight, and packaging before checkout.
+  artifact: >-
+    A documented concept spanning research synthesis, task flows, storyboards, sitemap, wireframes, and high-fidelity mood and blend-selection screens.
+  outcome: >-
+    The work produced a coherent UX design-task concept; build, usability validation, launch, and behavioural or commercial impact are not evidenced.
 tags:
   - "UX Research"
   - "Information Architecture"

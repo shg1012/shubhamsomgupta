@@ -4,6 +4,8 @@ slug: "font-readability-framework"
 category: "digital-experience"
 summary: >-
   A shipped font-scale framework that made dense technical logs easier to scan without changing the surrounding application chrome.
+proofLine: >-
+  A two-hour developer workshop became a shipped log-reading framework two sprints later.
 overview: >-
   A two-hour workshop turned a browser-zoom workaround into a reusable, developer-ready log-reading pattern that shipped two sprints later.
 year: "2022"
@@ -14,6 +16,29 @@ theme: "cyan"
 client: "Healthcare technology platform"
 role: "UX Designer & Workshop Facilitator"
 timeline: "2-hour workshop; shipped after 2 sprints"
+contribution: >-
+  Framed an observed browser-zoom workaround as a scoped readability problem, facilitated the developer workshop, and created the reference hierarchy used for implementation.
+collaborators:
+  - "Developers in the two-hour working session"
+methods:
+  - "Usability observation"
+  - "Problem framing"
+  - "Workshop facilitation"
+  - "Collaborative whiteboarding"
+  - "Typography framework design"
+evidenceToDecision:
+  situation: >-
+    Remote and field service engineers repeatedly changed browser zoom to scan dense technical logs, shrinking the whole application in the process.
+  evidence: >-
+    The observed workaround showed a need for greater information density, while existing typography and interface controls established clear lower bounds and fixed-element guardrails.
+  insight: >-
+    The density adjustment belonged in log-reading content, not in navigation, banners, tabs, or buttons.
+  decision: >-
+    Define a two-size log mode and make its font hierarchy, row heights, spacing, and unchanged interface elements explicit with developers.
+  artifact: >-
+    A developer-facing typography framework and a scoped 12px and 16px log-reading option.
+  outcome: >-
+    The option and framework shipped after two sprints; adoption and measured performance effects were not supplied.
 tags:
   - "Accessibility"
   - "Design Systems"

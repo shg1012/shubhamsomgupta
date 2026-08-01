@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
 
+const defaultDescription =
+  'Portfolio of Shubham S. Gupta, a senior UX designer working across research, service design, interaction design, and visual systems.';
+
 export function useDocumentTitle(title: string, description?: string) {
   useEffect(() => {
     document.title = `${title} | Shubham S. Gupta`;
   }, [title]);
 
   useEffect(() => {
-    if (!description) {
-      return;
-    }
-
     let metaDescription = document.querySelector<HTMLMetaElement>('meta[name="description"]');
 
     if (!metaDescription) {
@@ -18,6 +17,6 @@ export function useDocumentTitle(title: string, description?: string) {
       document.head.append(metaDescription);
     }
 
-    metaDescription.content = description;
+    metaDescription.content = description ?? defaultDescription;
   }, [description]);
 }
