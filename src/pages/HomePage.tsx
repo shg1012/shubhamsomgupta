@@ -1,4 +1,9 @@
 import { Link } from 'react-router-dom';
+import conferenceKeynote from '../assets/conferences/conference-keynote.webp';
+import conferenceRedDotPortrait from '../assets/conferences/conference-red-dot-portrait.webp';
+import conferenceRedDotTeam from '../assets/conferences/conference-red-dot-team.webp';
+import conferenceWorkshopFacilitation from '../assets/conferences/conference-workshop-facilitation.webp';
+import conferenceWorkshopRoundtable from '../assets/conferences/conference-workshop-roundtable.webp';
 import { ArrowRightIcon } from '../components/ArrowRightIcon';
 import { Hero } from '../components/Hero';
 import { ProjectCard } from '../components/ProjectCard';
@@ -14,6 +19,34 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import type { ProjectCardSize } from '../types/portfolio';
 
 const workStreamCardPattern: ProjectCardSize[] = ['wide', 'small', 'medium', 'small'];
+
+const conferenceImages = [
+  {
+    src: conferenceKeynote,
+    alt: 'Shubham Gupta speaking beside a screen displaying Romancing the Ambiguity.',
+    position: 'keynote',
+  },
+  {
+    src: conferenceWorkshopFacilitation,
+    alt: 'Shubham Gupta working with industry participants around a workshop table.',
+    position: 'facilitation',
+  },
+  {
+    src: conferenceRedDotPortrait,
+    alt: 'Shubham Gupta inside a Philips Experience Design Red Dot Team of the Year frame.',
+    position: 'portrait',
+  },
+  {
+    src: conferenceWorkshopRoundtable,
+    alt: 'Shubham Gupta seated with industry participants during a workshop.',
+    position: 'roundtable',
+  },
+  {
+    src: conferenceRedDotTeam,
+    alt: 'Shubham Gupta and colleagues holding a Red Dot Design Team of the Year certificate.',
+    position: 'team',
+  },
+] as const;
 
 const fieldNotes = [
   {
@@ -88,6 +121,20 @@ export function HomePage() {
           {secondaryProject ? (
             <ProjectCard project={secondaryProject} size="wide" index={1} presentation="evidence" />
           ) : null}
+        </div>
+      </section>
+
+      <section className="conference-collage" aria-labelledby="conference-collage-title">
+        <h2 id="conference-collage-title">Keynotes, workshops &amp; industry conversations.</h2>
+        <div className="conference-collage__grid">
+          {conferenceImages.map((image) => (
+            <figure
+              className={`conference-collage__image conference-collage__image--${image.position}`}
+              key={image.position}
+            >
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </figure>
+          ))}
         </div>
       </section>
 

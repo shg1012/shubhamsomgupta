@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
+import aboutHeroPortrait from '../assets/about-hero-portrait.webp';
 import { ArrowRightIcon } from '../components/ArrowRightIcon';
-import { assetPath } from '../data/assets';
 import { photographyItems } from '../data/photography';
 import { profile } from '../data/profile';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
@@ -39,8 +39,8 @@ export function AboutPage() {
         </div>
         <figure className="about-hero__portrait">
           <img
-            src={assetPath('images/home-shubham-matterhorn.webp')}
-            alt="Shubham Gupta standing in front of the Matterhorn in a snowy alpine landscape"
+            src={aboutHeroPortrait}
+            alt="Shubham Gupta wearing sunglasses in a snowy alpine landscape"
           />
           <figcaption>
             <span>Designer · engineer · photographer</span>

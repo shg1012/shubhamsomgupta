@@ -1,3 +1,4 @@
+import homeHeroPortrait from '../assets/home-hero-portrait.jpg';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { assetPath } from '../data/assets';
@@ -49,7 +50,7 @@ export function Hero() {
 
       <figure className="hero-portrait">
         <img
-          src={assetPath('images/home-shubham-matterhorn.webp')}
+          src={homeHeroPortrait}
           alt="Shubham Gupta standing in front of the Matterhorn in a snowy alpine landscape"
         />
         <figcaption>
