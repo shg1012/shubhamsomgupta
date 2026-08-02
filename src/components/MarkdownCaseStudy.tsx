@@ -184,8 +184,8 @@ export function MarkdownCaseStudy({ project }: MarkdownCaseStudyProps) {
       {decisionTrail.length ? (
         <section className="decision-trail" aria-labelledby="decision-trail-title">
           <div className="decision-trail__heading">
-            <p className="eyebrow">Evidence to decision</p>
             <h2 id="decision-trail-title">How the work moved forward</h2>
+            <p className="eyebrow">Evidence to decision</p>
           </div>
           <ol>
             {decisionTrail.map((step, index) => (

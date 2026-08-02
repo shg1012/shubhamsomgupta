@@ -213,7 +213,7 @@ export function HomePage() {
           actionTo="/photography"
         />
         <div className="photo-strip">
-          {photographyItems.slice(0, 4).map((item, index) => (
+          {photographyItems.slice(0, 6).map((item, index) => (
             <figure className={`photo-tile photo-tile--${item.orientation}`} key={item.id}>
               <img src={item.src} alt={item.alt} loading="lazy" />
               <figcaption>

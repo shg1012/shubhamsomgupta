@@ -137,7 +137,7 @@
 .markdown-body hr,
 .markdown-body .case-study-table-wrap {
   max-width: 760px;
-  margin-right: auto;
+  margin-right: 0;
   margin-left: auto;
   width: 100%;
 }
@@ -206,7 +206,7 @@
 
 .markdown-body blockquote {
   padding: 1.1rem 1.2rem;
-  border-left: 2px solid var(--cyan);
+  border-left: 2px solid var(--acid);
   border-radius: 7px;
   background: rgba(255, 255, 255, 0.045);
 }
@@ -328,9 +328,9 @@
 
 .decision-trail__heading {
   display: grid;
-  grid-template-columns: minmax(150px, 0.45fr) minmax(0, 1fr);
-  gap: 18px;
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: start;
   padding: 0 20px;
 }
 
