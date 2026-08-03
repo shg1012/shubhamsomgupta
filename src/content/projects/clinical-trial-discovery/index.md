@@ -1,5 +1,5 @@
 ---
-title: "Helping Patients Find the Right Clinical Trials"
+title: "Helping Patients Find Right Clinical Trials"
 slug: "clinical-trial-discovery"
 category: "digital-experience"
 summary: >-

@@ -1,5 +1,5 @@
 ---
-title: "Humanising the LT-20 Classic"
+title: "Humanising LT-20 Classic"
 slug: "humanising-lt20-classic"
 category: "industrial-experience"
 summary: >-

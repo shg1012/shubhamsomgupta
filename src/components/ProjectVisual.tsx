@@ -20,7 +20,9 @@ export function ProjectVisual({ project, context = 'card' }: ProjectVisualProps)
   const loading = context === 'hero' ? 'eager' : 'lazy';
 
   return (
-    <figure className={`project-visual project-visual--${mockup} project-visual--${context}`}>
+    <figure
+      className={`project-visual project-visual--${mockup} project-visual--${context} project-visual--${project.slug}`}
+    >
       {mockup === 'product' ? (
         <img
           className="product-image"
@@ -32,26 +34,8 @@ export function ProjectVisual({ project, context = 'card' }: ProjectVisualProps)
       ) : (
         <>
           <div className="artifact-frame">
-            <span className="artifact-frame__bar" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-            </span>
             <img src={image} alt={project.thumbnailAlt} loading={loading} decoding="async" />
           </div>
-          {mockup === 'dual' ? (
-            <div className="phone-frame" aria-hidden="true">
-              <span />
-              <img src={image} alt="" loading="lazy" decoding="async" />
-            </div>
-          ) : null}
-          {mockup === 'brand-system' ? (
-            <div className="brand-swatch-stack" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </div>
-          ) : null}
         </>
       )}
       <figcaption className="project-visual__caption">
