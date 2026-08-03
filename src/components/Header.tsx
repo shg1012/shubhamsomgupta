@@ -84,9 +84,7 @@ export function Header() {
       </a>
       <div className="nav-shell" aria-label="Primary">
         <Link className="brand-mark" to="/" aria-label="Shubham S. Gupta home">
-          <span className="brand-mark__monogram" aria-hidden="true">
-            SSG
-          </span>
+          <img className="brand-mark__favicon" src="/favicon.svg" alt="" />
           <span className="brand-mark__copy">
             <strong>{profile.name}</strong>
             <small>{profile.role}</small>

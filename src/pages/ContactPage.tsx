@@ -29,7 +29,13 @@ export function ContactPage() {
         </div>
         <div className="contact-grid">
           {socialLinks.map((item, index) => (
-            <a className="contact-card" href={item.href} key={item.label}>
+            <a
+              className="contact-card"
+              href={item.href}
+              key={item.label}
+              target={item.href.startsWith('http') ? '_blank' : undefined}
+              rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+            >
               <span>{String(index + 1).padStart(2, '0')}</span>
               <strong>{item.label}</strong>
               <small>Open profile</small>

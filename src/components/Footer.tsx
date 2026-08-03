@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { profile } from '../data/profile';
 
 export function Footer() {
@@ -14,11 +13,16 @@ export function Footer() {
       <div className="site-footer__meta">
         <div className="footer-links">
           {profile.socials.map((item) => (
-            <a key={item.label} href={item.href}>
+            <a
+              key={item.label}
+              href={item.href}
+              target={item.href.startsWith('http') ? '_blank' : undefined}
+              rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+            >
               {item.label}
             </a>
           ))}
-          <Link to="/contact">Contact</Link>
+          <a href="tel:+917060762001">0091 - 7060762001</a>
         </div>
         <p>Designed as a working archive of systems, stories, and visual observations.</p>
       </div>

@@ -12,6 +12,7 @@ import { categories } from '../data/categories';
 import { photographyItems } from '../data/photography';
 import {
   getFeaturedProject,
+  getProject,
   getProjectsByCategory,
   getSecondaryFeaturedProject,
 } from '../data/projects';
@@ -19,6 +20,10 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import type { ProjectCardSize } from '../types/portfolio';
 
 const workStreamCardPattern: ProjectCardSize[] = ['wide', 'small', 'medium', 'small'];
+const fontReadabilityProject = getProject('font-readability-framework')!;
+const fireFlysProject = getProject('fireflys')!;
+const zeroBrushProject = getProject('zero-brush')!;
+const photographyPreview = photographyItems[0];
 
 const conferenceImages = [
   {
@@ -54,24 +59,32 @@ const fieldNotes = [
     title: 'Making type more readable in clinical interfaces',
     description: 'A framework shaped through usability observation and workshop synthesis.',
     to: '/project/font-readability-framework',
+    thumbnail: fontReadabilityProject.thumbnail,
+    thumbnailAlt: fontReadabilityProject.thumbnailAlt,
   },
   {
     status: 'Working prototype',
     title: 'A drone system for earlier wildfire signals',
     description: 'Physical design, sensing, ground-control workflow, and iterative prototyping.',
     to: '/project/fireflys',
+    thumbnail: fireFlysProject.thumbnail,
+    thumbnailAlt: fireFlysProject.thumbnailAlt,
   },
   {
     status: 'Functioning academic concept prototype',
     title: 'Brushing as a medication-delivery moment',
     description: 'A product concept explored through form, mechanism, and physical testing.',
     to: '/project/zero-brush',
+    thumbnail: zeroBrushProject.thumbnail,
+    thumbnailAlt: zeroBrushProject.thumbnailAlt,
   },
   {
     status: 'Photography practice',
     title: 'Light, motion, and texture outside the interface',
     description: 'A visual practice built around attention, context, and small observations.',
     to: '/photography',
+    thumbnail: photographyPreview.src,
+    thumbnailAlt: photographyPreview.alt,
   },
 ];
 
@@ -194,6 +207,12 @@ export function HomePage() {
             <Link to={note.to} key={note.title}>
               <span className="field-note__index">{String(index + 1).padStart(2, '0')}</span>
               <span className="field-note__status">{note.status}</span>
+              <img
+                className="field-note__thumbnail"
+                src={note.thumbnail}
+                alt={note.thumbnailAlt}
+                loading="lazy"
+              />
               <span className="field-note__copy">
                 <strong>{note.title}</strong>
                 <small>{note.description}</small>

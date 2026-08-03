@@ -2,7 +2,7 @@ export const profile = {
   name: 'Shubham Som Gupta',
   role: 'Senior UX Designer',
   location: 'Designing from systems, stories, and the spaces between them.',
-  email: 'shubham@ssgupta.in',
+  email: 'shg1012@gmail.com',
   headline: 'I help bring chaos to clarity',
   intro:
     'Senior UX designer simplifying complex healthcare and operational systems through research, service design, and interaction design.',
@@ -20,9 +20,9 @@ export const profile = {
     'Photography',
   ],
   socials: [
-    { label: 'Email', href: 'mailto:shubham@ssgupta.in' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-    { label: 'Behance', href: 'https://www.behance.net/' },
-    { label: 'Instagram', href: 'https://www.instagram.com/' },
+    { label: 'Email', href: 'mailto:shg1012@gmail.com' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shubhamsomgupta/' },
+    { label: 'Behance', href: 'https://www.behance.net/shg1012' },
+    { label: 'Instagram', href: 'https://www.instagram.com/shubhamsomgupta/' },
   ],
 };
