@@ -23,6 +23,7 @@ export const profile = {
     { label: 'Email', href: 'mailto:shg1012@gmail.com' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shubhamsomgupta/' },
     { label: 'Behance', href: 'https://www.behance.net/shg1012' },
+    { label: 'Medium', href: 'https://medium.com/@shg1012' },
     { label: 'Instagram', href: 'https://www.instagram.com/shubhamsomgupta/' },
   ],
 };

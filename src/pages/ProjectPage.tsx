@@ -4,6 +4,7 @@ import { MarkdownCaseStudy } from '../components/MarkdownCaseStudy';
 import { ProjectVisual } from '../components/ProjectVisual';
 import { getCategory } from '../data/categories';
 import { getProject, getProjectsByCategory } from '../data/projects';
+import { getWritingArticle } from '../data/writing';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { NotFoundPage } from './NotFoundPage';
 
@@ -25,6 +26,14 @@ export function ProjectPage() {
   const previousProject =
     categoryProjects[(currentIndex - 1 + categoryProjects.length) % categoryProjects.length];
   const nextProject = categoryProjects[(currentIndex + 1) % categoryProjects.length];
+  const relatedWritingByProject: Record<string, string> = {
+    'onex-healthcare-operations': 'healthcare-components',
+    'clinical-trial-discovery': 'healthcare-components',
+    'font-readability-framework': 'usability-testing',
+    'zero-brush': 'zero-brush',
+  };
+  const relatedWritingId = relatedWritingByProject[project.slug];
+  const relatedWriting = relatedWritingId ? getWritingArticle(relatedWritingId) : undefined;
 
   return (
     <div
@@ -124,6 +133,20 @@ export function ProjectPage() {
       ) : null}
 
       <MarkdownCaseStudy project={project} />
+
+      {relatedWriting ? (
+        <aside className="related-writing" aria-label="Related writing">
+          <p className="eyebrow">Related reading</p>
+          <div>
+            <span>{relatedWriting.theme}</span>
+            <h2>{relatedWriting.title}</h2>
+            <a href={relatedWriting.href} target="_blank" rel="noreferrer">
+              Read on Medium
+              <ArrowRightIcon />
+            </a>
+          </div>
+        </aside>
+      ) : null}
 
       <nav className="project-next-nav" aria-label="Project navigation">
         <Link to={`/project/${previousProject.slug}`}>

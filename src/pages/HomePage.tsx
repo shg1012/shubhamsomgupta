@@ -4,6 +4,7 @@ import conferenceRedDotPortrait from '../assets/conferences/conference-red-dot-p
 import conferenceRedDotTeam from '../assets/conferences/conference-red-dot-team.webp';
 import conferenceWorkshopFacilitation from '../assets/conferences/conference-workshop-facilitation.webp';
 import conferenceWorkshopRoundtable from '../assets/conferences/conference-workshop-roundtable.webp';
+import redDotTeamAward from '../assets/LI_Banner_BLR.webp';
 import { ArrowRightIcon } from '../components/ArrowRightIcon';
 import { Hero } from '../components/Hero';
 import { ProjectCard } from '../components/ProjectCard';
@@ -18,6 +19,7 @@ import {
 } from '../data/projects';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import type { ProjectCardSize } from '../types/portfolio';
+import { featuredWriting } from '../data/writing';
 
 const workStreamCardPattern: ProjectCardSize[] = ['wide', 'small', 'medium', 'small'];
 const fontReadabilityProject = getProject('font-readability-framework')!;
@@ -107,9 +109,15 @@ export function HomePage() {
         />
         <div className="selected-work__grid">
           {featuredProject ? (
-            <ProjectCard project={featuredProject} size="hero" index={0} presentation="image" />
+            <ProjectCard
+              project={featuredProject}
+              size="hero"
+              index={0}
+              presentation="image"
+              showTags={false}
+            />
           ) : null}
-          <article className="practice-card">
+          <article className="practice-card practice-card--intro">
             <p className="eyebrow">Practice note</p>
             <h2>Research-led. Artifact-driven. Built for the messy middle.</h2>
             <p>
@@ -119,17 +127,22 @@ export function HomePage() {
             <dl>
               <div>
                 <dt>Experience</dt>
-                <dd>6+ years</dd>
+                <dd>7+ years</dd>
               </div>
               <div>
                 <dt>Recognition</dt>
-                <dd>Red Dot team awardee</dd>
+                <dd>Red Dot Design Team of the Year</dd>
               </div>
             </dl>
             <Link className="text-action" to="/about">
               Read about my practice
               <ArrowRightIcon />
             </Link>
+          </article>
+          <article className="practice-card practice-card--award">
+            <figure>
+              <img src={redDotTeamAward} alt="Red Dot Award 2022 Design Team of the Year label." />
+            </figure>
           </article>
           {secondaryProject ? (
             <ProjectCard project={secondaryProject} size="wide" index={1} presentation="evidence" />
@@ -153,6 +166,10 @@ export function HomePage() {
 
       {categories.map((category, categoryIndex) => {
         const categoryProjects = getProjectsByCategory(category.slug).slice(0, 4);
+        const streamProjects =
+          category.slug === 'branding-and-identity'
+            ? categoryProjects.filter((project) => project.slug !== 'studio-portfolio-identity')
+            : categoryProjects;
 
         return (
           <div className="home-stream-group" key={category.slug}>
@@ -165,13 +182,14 @@ export function HomePage() {
                 actionTo={`/work/${category.slug}`}
               />
               <div className={`project-grid project-grid--${category.slug}`}>
-                {categoryProjects.map((project, index) => (
+                {streamProjects.map((project, index) => (
                   <ProjectCard
                     key={project.slug}
                     project={project}
                     size={workStreamCardPattern[index] ?? 'small'}
                     index={index}
                     presentation={index === 1 ? 'editorial' : index === 2 ? 'evidence' : 'image'}
+                    showProof={project.slug !== 'onex-healthcare-operations'}
                   />
                 ))}
               </div>
@@ -223,9 +241,30 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="writing-preview" aria-labelledby="writing-preview-title">
+        <SectionHeader
+          eyebrow="Field notes / Essays · 06"
+          title="Longer thoughts, kept close to the work."
+          description="Selected writing on healthcare UX, research practice, interaction craft, and design."
+          actionLabel="View all writing"
+          actionTo="/writing"
+        />
+        <div className="writing-preview__list">
+          {featuredWriting.map((article, index) => (
+            <a href={article.href} key={article.id} target="_blank" rel="noreferrer">
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <span>{article.theme}</span>
+              <strong>{article.title}</strong>
+              <small>{article.date} · Read on Medium</small>
+              <ArrowRightIcon />
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="photography-preview">
         <SectionHeader
-          eyebrow="Visual observations / 06"
+          eyebrow="Visual observations / 07"
           title="Field notes in light, motion, and texture."
           description="Photography is the counterpoint to the systems work—and part of how I keep looking closely."
           actionLabel="Open the gallery"

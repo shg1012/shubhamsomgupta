@@ -9,9 +9,18 @@ interface ProjectCardProps {
   size?: Project['cardSize'];
   index?: number;
   presentation?: 'image' | 'editorial' | 'evidence';
+  showTags?: boolean;
+  showProof?: boolean;
 }
 
-export function ProjectCard({ project, size, index, presentation = 'image' }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  size,
+  index,
+  presentation = 'image',
+  showTags = true,
+  showProof = true,
+}: ProjectCardProps) {
   const category = getCategory(project.category);
   const cardSize = size ?? project.cardSize ?? 'medium';
 
@@ -38,14 +47,18 @@ export function ProjectCard({ project, size, index, presentation = 'image' }: Pr
           {project.year ? <span>{project.year}</span> : null}
         </div>
         <h3>{project.title}</h3>
-        <p className={project.proofLine ? 'project-card__proof' : undefined}>
-          {project.proofLine ?? project.shortDescription}
-        </p>
-        <div className="tag-row" aria-label="Project tags">
-          {project.tags.slice(0, 2).map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
+        {showProof ? (
+          <p className={project.proofLine ? 'project-card__proof' : undefined}>
+            {project.proofLine ?? project.shortDescription}
+          </p>
+        ) : null}
+        {showTags ? (
+          <div className="tag-row" aria-label="Project tags">
+            {project.tags.slice(0, 2).map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+        ) : null}
       </div>
       <ProjectVisual project={project} />
     </Link>

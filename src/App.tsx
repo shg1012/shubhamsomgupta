@@ -25,6 +25,9 @@ const PhotographyPage = lazy(() =>
 const ProjectPage = lazy(() =>
   import('./pages/ProjectPage').then(({ ProjectPage }) => ({ default: ProjectPage })),
 );
+const WritingPage = lazy(() =>
+  import('./pages/WritingPage').then(({ WritingPage }) => ({ default: WritingPage })),
+);
 
 function RouteEffects() {
   const { pathname } = useLocation();
@@ -62,6 +65,7 @@ export default function App() {
             <Route path="/work/:categorySlug" element={<CategoryPage />} />
             <Route path="/project/:projectSlug" element={<ProjectPage />} />
             <Route path="/photography" element={<PhotographyPage />} />
+            <Route path="/writing" element={<WritingPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
