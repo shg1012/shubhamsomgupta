@@ -36,7 +36,6 @@ export function Hero() {
           <span>Complex systems,</span>
           <strong>made clear.</strong>
         </h1>
-        <p className="hero-positioning">{profile.intro}</p>
         <div className="hero-actions">
           <button className="button-primary" type="button" onClick={scrollToSelectedWork}>
             Explore selected work
@@ -53,16 +52,7 @@ export function Hero() {
           src={homeHeroPortrait}
           alt="Shubham Gupta standing in front of the Matterhorn in a snowy alpine landscape"
         />
-        <figcaption>
-          <span>Outside the interface</span>
-          <strong>Observation keeps the work human.</strong>
-        </figcaption>
       </figure>
-
-      <aside className="hero-note">
-        <span>Practice / 01</span>
-        <p>Research-led, artifact-driven, and comfortable in the messy middle.</p>
-      </aside>
 
       <div className="hero-art" aria-hidden="true">
         <img src={assetPath('images/figma-hero.png')} alt="" />

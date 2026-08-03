@@ -286,19 +286,26 @@ body:has(.hero-section--intro) .nav-shell {
   position: relative;
   inset: auto;
   z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
   width: auto;
   max-width: 880px;
   margin: 0;
   padding: 0;
+  justify-self: start;
   text-align: left;
   transform: none;
 }
 
-.hero-kicker {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 28px;
-  margin: 0 0 28px;
+.hero-copy .hero-kicker {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  margin: 0;
+  margin-left: 0;
+  text-align: left;
   opacity: 1;
 }
 
@@ -344,7 +351,7 @@ body:has(.hero-section--intro) .nav-shell {
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 32px;
+  margin-top: 0;
 }
 
 .button-primary,
@@ -465,12 +472,13 @@ body:has(.hero-section--intro) .nav-shell {
 
 .hero-art {
   position: absolute;
-  right: 28%;
+  right: auto;
   bottom: 3%;
-  left: 38%;
+  left: clamp(42px, 6vw, 88px);
   z-index: 1;
   inset-block-start: auto;
   display: block;
+  width: min(32%, 390px);
   opacity: 0.28;
   transform: rotate(-8deg);
 }
@@ -837,11 +845,8 @@ body:has(.hero-section--intro) .nav-shell {
 
 .conference-collage__image--portrait {
   z-index: 2;
-  height: calc(100% + 48px);
   grid-column: 6 / span 3;
   grid-row: 2;
-  transform: translateY(-48px);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
 }
 
 .conference-collage__image--roundtable {
@@ -3457,10 +3462,9 @@ body:has(.hero-section--intro) .nav-shell {
     inset: 9px;
   }
 
-  .hero-kicker {
+  .hero-copy .hero-kicker {
     display: grid;
-    gap: 6px;
-    margin-bottom: 22px;
+    gap: 8px;
   }
 
   .hero-copy h1 {
