@@ -1,4 +1,5 @@
-import { Link, useParams } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { ArrowRightIcon } from '../components/ArrowRightIcon';
 import { MarkdownCaseStudy } from '../components/MarkdownCaseStudy';
 import { ProjectVisual } from '../components/ProjectVisual';
@@ -10,8 +11,33 @@ import { NotFoundPage } from './NotFoundPage';
 
 export function ProjectPage() {
   const { projectSlug } = useParams();
+  const location = useLocation();
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const project = getProject(projectSlug ?? '');
   useDocumentTitle(project?.title ?? 'Page not found', project?.seo?.description);
+
+  useEffect(() => {
+    const navigationState = location.state as { fromGuide?: boolean } | null;
+
+    if (!navigationState?.fromGuide && !location.hash) {
+      return;
+    }
+
+    window.requestAnimationFrame(() => {
+      const sectionId = location.hash.replace(/^#/, '');
+      const target = (sectionId ? document.getElementById(sectionId) : null) ?? titleRef.current;
+
+      if (!target) {
+        return;
+      }
+
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    });
+  }, [location.hash, location.state, projectSlug]);
 
   if (!project) {
     return <NotFoundPage />;
@@ -54,7 +80,9 @@ export function ProjectPage() {
             Case study / {String(currentIndex + 1).padStart(2, '0')} ·{' '}
             {project.status ?? project.depth}
           </p>
-          <h1>{project.title}</h1>
+          <h1 ref={titleRef} tabIndex={-1}>
+            {project.title}
+          </h1>
           <p>{project.overview ?? project.shortDescription}</p>
           {project.proofLine ? (
             <strong className="project-hero__proof">{project.proofLine}</strong>
@@ -95,7 +123,9 @@ export function ProjectPage() {
         <section className="project-at-a-glance" aria-labelledby="at-a-glance-title">
           <div className="project-at-a-glance__heading">
             <p className="eyebrow">At a glance</p>
-            <h2 id="at-a-glance-title">What I brought to the work</h2>
+            <h2 id="at-a-glance-title" tabIndex={-1}>
+              What I brought to the work
+            </h2>
           </div>
           <dl>
             {project.contribution ? (

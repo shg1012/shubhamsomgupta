@@ -5,6 +5,7 @@ import App from './App';
 import './styles/global.css';
 import './styles/markdown.css';
 import './styles/editorial.css';
+import './styles/guide.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -3,6 +3,8 @@ export const profile = {
   role: 'Senior UX Designer',
   location: 'Designing from systems, stories, and the spaces between them.',
   email: 'shg1012@gmail.com',
+  phone: '0091 - 7060762001',
+  phoneHref: 'tel:+917060762001',
   headline: 'I help bring chaos to clarity',
   intro:
     'Senior UX designer simplifying complex healthcare and operational systems through research, service design, and interaction design.',

@@ -1,8 +1,10 @@
-import { lazy, Suspense, useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { lazy, Suspense, useEffect, useRef } from 'react';
+import { Route, Routes, useLocation, useNavigationType } from 'react-router-dom';
 import { Footer } from './components/Footer';
+import { GuideLauncher } from './components/GuideLauncher';
 import { Header } from './components/Header';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
+import { guideLocationPath, readGuideSession } from './guide/guideSession';
 
 const AboutPage = lazy(() =>
   import('./pages/AboutPage').then(({ AboutPage }) => ({ default: AboutPage })),
@@ -15,6 +17,9 @@ const ContactPage = lazy(() =>
 );
 const HomePage = lazy(() =>
   import('./pages/HomePage').then(({ HomePage }) => ({ default: HomePage })),
+);
+const GuidePage = lazy(() =>
+  import('./pages/GuidePage').then(({ GuidePage }) => ({ default: GuidePage })),
 );
 const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage').then(({ NotFoundPage }) => ({ default: NotFoundPage })),
@@ -30,14 +35,43 @@ const WritingPage = lazy(() =>
 );
 
 function RouteEffects() {
-  const { pathname } = useLocation();
+  const { hash, pathname, search, state } = useLocation();
+  const navigationType = useNavigationType();
 
   useEffect(() => {
+    const navigationState = state as { fromGuide?: boolean } | null;
+    const guideSession = readGuideSession();
+    const currentPath = guideLocationPath(pathname, search) + hash;
+    const returnedThroughBrowser = Boolean(
+      guideSession &&
+      !guideSession.isClosed &&
+      navigationType === 'POP' &&
+      !navigationState?.fromGuide &&
+      guideSession.originPath === currentPath,
+    );
+
+    if (
+      pathname.startsWith('/guide') ||
+      (navigationState?.fromGuide && pathname.startsWith('/project/')) ||
+      returnedThroughBrowser
+    ) {
+      return;
+    }
+
     window.scrollTo({
       top: 0,
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      behavior:
+        navigationState?.fromGuide || window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'auto'
+          : 'smooth',
     });
-  }, [pathname]);
+
+    if (navigationState?.fromGuide) {
+      window.requestAnimationFrame(() => {
+        document.getElementById('main-content')?.focus({ preventScroll: true });
+      });
+    }
+  }, [hash, navigationType, pathname, search, state]);
 
   return null;
 }
@@ -53,26 +87,49 @@ function RouteLoadingFallback() {
 }
 
 export default function App() {
+  const location = useLocation();
+  const { pathname } = location;
+  const isGuideRoute = pathname.startsWith('/guide');
+  const underlayRef = useRef<HTMLDivElement>(null);
+  const guideNavigationState = location.state as { guideBackgroundPath?: string } | null;
+  const guideSession = isGuideRoute ? readGuideSession() : null;
+  const backgroundPath =
+    guideNavigationState?.guideBackgroundPath ?? guideSession?.originPath ?? '/';
+
+  useEffect(() => {
+    underlayRef.current?.toggleAttribute('inert', isGuideRoute);
+  }, [isGuideRoute]);
+
   return (
     <>
       <RouteEffects />
-      <Header />
-      <main id="main-content">
+      <div ref={underlayRef} className="portfolio-underlay" aria-hidden={isGuideRoute || undefined}>
+        <Header />
+        <main id="main-content" tabIndex={-1}>
+          <Suspense fallback={<RouteLoadingFallback />}>
+            <Routes location={isGuideRoute ? backgroundPath : location}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/work/:categorySlug" element={<CategoryPage />} />
+              <Route path="/project/:projectSlug" element={<ProjectPage />} />
+              <Route path="/photography" element={<PhotographyPage />} />
+              <Route path="/writing" element={<WritingPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </Suspense>
+        </main>
+        {!isGuideRoute ? <GuideLauncher /> : null}
+        <Footer />
+        {!isGuideRoute ? <ScrollToTopButton /> : null}
+      </div>
+      {isGuideRoute ? (
         <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/work/:categorySlug" element={<CategoryPage />} />
-            <Route path="/project/:projectSlug" element={<ProjectPage />} />
-            <Route path="/photography" element={<PhotographyPage />} />
-            <Route path="/writing" element={<WritingPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/guide/*" element={<GuidePage />} />
           </Routes>
         </Suspense>
-      </main>
-      <Footer />
-      <ScrollToTopButton />
+      ) : null}
     </>
   );
 }

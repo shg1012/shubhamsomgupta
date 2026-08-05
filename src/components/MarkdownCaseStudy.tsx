@@ -88,7 +88,7 @@ const markdownComponents: Components = {
     const headingText = textFromChildren(children);
 
     return (
-      <h2 id={slugifyHeading(headingText)} {...props}>
+      <h2 id={slugifyHeading(headingText)} tabIndex={-1} {...props}>
         {children}
       </h2>
     );
@@ -98,7 +98,7 @@ const markdownComponents: Components = {
     const headingText = textFromChildren(children);
 
     return (
-      <h3 id={slugifyHeading(headingText)} {...props}>
+      <h3 id={slugifyHeading(headingText)} tabIndex={-1} {...props}>
         {children}
       </h3>
     );
@@ -184,7 +184,9 @@ export function MarkdownCaseStudy({ project }: MarkdownCaseStudyProps) {
       {decisionTrail.length ? (
         <section className="decision-trail" aria-labelledby="decision-trail-title">
           <div className="decision-trail__heading">
-            <h2 id="decision-trail-title">How the work moved forward</h2>
+            <h2 id="decision-trail-title" tabIndex={-1}>
+              How the work moved forward
+            </h2>
             <p className="eyebrow">Evidence to decision</p>
           </div>
           <ol>

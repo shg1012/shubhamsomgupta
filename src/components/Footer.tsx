@@ -22,7 +22,7 @@ export function Footer() {
               {item.label}
             </a>
           ))}
-          <a href="tel:+917060762001">0091 - 7060762001</a>
+          <a href={profile.phoneHref}>{profile.phone}</a>
         </div>
         <p>Designed as a working archive of systems, stories, and visual observations.</p>
       </div>
