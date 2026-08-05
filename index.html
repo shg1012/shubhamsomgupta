@@ -8,6 +8,20 @@
       content="Portfolio of Shubham S. Gupta, senior UX designer working across healthcare, digital products, identities, and photography."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('portfolio-theme');
+          if (theme !== 'light' && theme !== 'dark') {
+            theme = 'light';
+          }
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (error) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
     <title>Shubham S. Gupta | Design Portfolio</title>
   </head>
   <body>

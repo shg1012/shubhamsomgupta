@@ -26,7 +26,7 @@ export function ProjectCard({
 
   return (
     <Link
-      className={`project-card project-card--${cardSize} project-card--${presentation} project-card--${project.category} theme-${project.theme}`}
+      className={`project-card project-card--${cardSize} project-card--${presentation} project-card--${project.category} project-card--${project.slug} theme-${project.theme}`}
       to={`/project/${project.slug}`}
       aria-label={`Open project: ${project.title}. ${project.proofLine ?? project.shortDescription}`}
     >

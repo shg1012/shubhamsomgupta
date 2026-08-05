@@ -12,9 +12,28 @@ export function Header() {
   const activeProject = projectSlug ? getProject(decodeURIComponent(projectSlug)) : undefined;
   const activeCategoryPath = activeProject ? `/work/${activeProject.category}` : undefined;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const savedTheme = window.localStorage.getItem('portfolio-theme');
+
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      return savedTheme;
+    }
+
+    return 'light';
+  });
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const menuPanelRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    window.localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'));
+  };
 
   const closeMenu = (restoreFocus = false) => {
     setIsMenuOpen(false);
@@ -116,6 +135,19 @@ export function Header() {
             </NavLink>
           ))}
         </nav>
+        <button
+          className="theme-toggle theme-toggle--desktop"
+          type="button"
+          aria-pressed={theme === 'dark'}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+          title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+          onClick={toggleTheme}
+        >
+          <span className="theme-toggle__icon" aria-hidden="true">
+            {theme === 'dark' ? '◐' : '☼'}
+          </span>
+          <span>{theme}</span>
+        </button>
         <Link className="email-pill" to="/contact">
           <span>Let&apos;s talk</span>
           <ArrowRightIcon />
@@ -175,6 +207,22 @@ export function Header() {
             </NavLink>
           ))}
         </nav>
+        <div className="mobile-menu-appearance">
+          <span>Appearance</span>
+          <button
+            className="theme-toggle theme-toggle--mobile"
+            type="button"
+            tabIndex={isMenuOpen ? 0 : -1}
+            aria-pressed={theme === 'dark'}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            onClick={toggleTheme}
+          >
+            <span className="theme-toggle__icon" aria-hidden="true">
+              {theme === 'dark' ? '◐' : '☼'}
+            </span>
+            <span>{theme}</span>
+          </button>
+        </div>
       </aside>
     </header>
   );

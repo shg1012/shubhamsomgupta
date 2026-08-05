@@ -1,7 +1,6 @@
 import homeHeroPortrait from '../assets/home-hero-portrait.jpg';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { assetPath } from '../data/assets';
 import { profile } from '../data/profile';
 import { ArrowRightIcon } from './ArrowRightIcon';
 
@@ -53,19 +52,6 @@ export function Hero() {
           alt="Shubham Gupta standing in front of the Matterhorn in a snowy alpine landscape"
         />
       </figure>
-
-      <div className="hero-art" aria-hidden="true">
-        <img src={assetPath('images/figma-hero.png')} alt="" />
-      </div>
-
-      <a
-        className="hero-source"
-        href="https://revisionlab.wordpress.com/that-squiggle-of-the-design-process/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Process squiggle / Damien Newman
-      </a>
     </section>
   );
 }
