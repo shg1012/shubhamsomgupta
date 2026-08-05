@@ -1219,7 +1219,7 @@ body:has(.hero-section--intro) .nav-shell {
 }
 
 .project-next-nav strong {
-  color: #ffffff;
+  color: var(--ink);
 }
 
 .project-next-nav > div {
