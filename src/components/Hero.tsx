@@ -1,7 +1,6 @@
 import homeHeroPortrait from '../assets/home-hero-portrait.jpg';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { profile } from '../data/profile';
 import { ArrowRightIcon } from './ArrowRightIcon';
 
 let hasPlayedHeroIntro = false;
@@ -28,8 +27,8 @@ export function Hero() {
     <section className={`hero-section${playIntro ? ' hero-section--intro' : ''}`}>
       <div className="hero-copy">
         <p className="hero-kicker">
-          <span>{profile.role}</span>
-          <span>Research · systems · interaction</span>
+          <span>Shubham Som Gupta</span>
+          <span>Engineer ~ Photographer ~ Designer</span>
         </p>
         <h1 aria-label="Complex systems, made clear.">
           <span>Complex systems,</span>

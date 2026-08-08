@@ -223,6 +223,15 @@ export function Header() {
             <span>{theme}</span>
           </button>
         </div>
+        <Link
+          className="mobile-menu-contact"
+          to="/contact"
+          tabIndex={isMenuOpen ? 0 : -1}
+          onClick={() => closeMenu()}
+        >
+          <span>Let&apos;s talk</span>
+          <ArrowRightIcon />
+        </Link>
       </aside>
     </header>
   );

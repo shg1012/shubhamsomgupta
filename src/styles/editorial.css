@@ -2313,6 +2313,7 @@ body:has(.hero-section--intro) .nav-shell {
   height: 540px;
   object-fit: cover;
   border-radius: 46% 46% 12px 12px;
+  box-shadow: var(--hero-portrait-shadow);
 }
 
 .about-hero__portrait figcaption {
@@ -3162,6 +3163,14 @@ body:has(.hero-section--intro) .nav-shell {
   font-size: 0.76rem;
 }
 
+.site-footer__visit-counter {
+  line-height: 1;
+}
+
+.site-footer__visit-digits {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
 /* Responsive */
 @media (max-width: 1180px) {
   .nav-shell,
@@ -3933,6 +3942,44 @@ body:has(.hero-section--intro) .nav-shell {
   letter-spacing: 0.1em;
 }
 
+.mobile-menu-contact {
+  display: inline-flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding: 0 18px;
+  color: var(--ink-dark);
+  font-size: 0.85rem;
+  font-weight: 800;
+  border: 1px solid var(--acid);
+  border-radius: 12px;
+  background: var(--acid);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.mobile-menu-contact .arrow-right-icon {
+  width: 16px;
+  transition: transform 180ms ease;
+}
+
+.mobile-menu-contact:hover,
+.mobile-menu-contact:focus-visible {
+  color: var(--ink-dark);
+  border-color: var(--acid);
+  background: color-mix(in srgb, var(--acid) 84%, var(--paper-strong));
+}
+
+.mobile-menu-contact:hover .arrow-right-icon,
+.mobile-menu-contact:focus-visible .arrow-right-icon {
+  transform: translateX(3px);
+}
+
 html[data-theme='light'] {
   color-scheme: light;
   --canvas: #f7f4eb;
@@ -4017,6 +4064,16 @@ html[data-theme='light'] .conference-collage h2 {
   color: #b4cfb4;
 }
 
+html[data-theme='light'] .about-ai__intro > p:not(.eyebrow),
+html[data-theme='light'] .about-ai__intro small,
+html[data-theme='light'] .about-ai__workflow p {
+  color: #d9d9d9;
+}
+
+html[data-theme='light'] .about-credentials .eyebrow {
+  color: #fffdf8;
+}
+
 html[data-theme='light'] .hero-portrait figcaption,
 html[data-theme='light'] .project-visual__caption {
   color: var(--ink);
@@ -4038,6 +4095,21 @@ html[data-theme='light'] .mobile-menu-backdrop {
 html[data-theme='light'] .mobile-menu-panel__header,
 html[data-theme='light'] .mobile-menu-link {
   color: var(--ink);
+}
+
+html[data-theme='light'] .mobile-menu-close {
+  color: var(--ink);
+  border-color: var(--rule);
+  background: transparent;
+}
+
+html[data-theme='light'] .mobile-menu-trigger:hover,
+html[data-theme='light'] .mobile-menu-trigger:focus-visible,
+html[data-theme='light'] .mobile-menu-close:hover,
+html[data-theme='light'] .mobile-menu-close:focus-visible {
+  color: var(--ink-dark);
+  border-color: var(--acid);
+  background: color-mix(in srgb, var(--acid) 86%, var(--ink));
 }
 
 html[data-theme='light'] .mobile-menu-link:hover,
